@@ -5,6 +5,8 @@
 
 html {
   scroll-behavior: smooth;
+  position: relative;
+  min-height: 100%;
 }
 
 :root {
@@ -23,6 +25,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 100px;
 }
 
 textarea {
@@ -55,6 +58,30 @@ button:hover {
   background-color: green;
 }
 
-.output_str{
+.blue-btn {
+  background-color: #418bca;
+}
+
+.blue-btn:hover {
+  background-color: #0069d9;
+}
+.output_str {
   direction: rtl;
+}
+
+footer {
+  background-color: #33485d;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
 }

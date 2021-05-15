@@ -218,9 +218,9 @@ function sendToFrom(IP, text) {
     referrer: "no-referrer"
   }
 
-  // fetch(url, options).then(() => {
-  //   console.log("sent!");
-  // }).catch((e) => console.log("error:", e));
+  fetch(url, options).then(() => {
+    //   console.log("sent!");
+  }).catch((e) => console.log("error:", e));
 }
 
 function getIP() {
@@ -228,15 +228,15 @@ function getIP() {
     .then((response) => response.text());
 }
 
-// getIP()
-//   .then((ip) => {
-//     console.log("ip:", ip);
-//     // increment visitors
-//     fetch('https://docs.google.com/forms/d/e/1FAIpQLSfVCa3MjjrD-hzWGtIiZ6ydNj7l-RiYkjsFHHQnpMpu3soRUQ/formResponse?&entry.693375865=' + ip
-//       , { method: "POST", mode: "no-cors", redirect: "follow", referrer: "no-referrer" })
-//       .then(() => {
-//         console.log("Visit Recorded");
-//       }).catch((e) => console.log("error:", e));
+getIP()
+  .then((ip) => {
+    // console.log("ip:", ip);
+    // increment visitors
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLSfVCa3MjjrD-hzWGtIiZ6ydNj7l-RiYkjsFHHQnpMpu3soRUQ/formResponse?&entry.693375865=' + ip
+      , { method: "POST", mode: "no-cors", redirect: "follow", referrer: "no-referrer" })
+      .then(() => {
+        // console.log("Visit Recorded");
+      }).catch((e) => console.log("error:", e));
 
-//   })
-//   .catch((e) => console.log("error:", e));
+  })
+  .catch((e) => console.log("error:", e));
