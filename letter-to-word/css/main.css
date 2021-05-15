@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+  /* transition: all ease 0.5s; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --darkreader-bg--bg-color: #141413;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+}
+
+main {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+}
+
+.textarea-box {
+  width: 100%;
+  padding: 20px 0px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+button:hover {
+  background-color: green;
+}
+
+.output_str{
+  direction: rtl;
+}
+/*
+                        _______
+                       /       \
+                      .==.    .==.
+                     ((  ))==((  ))
+                    / "=="    "=="\
+                   /____|| || ||___\
+       ________     ____    ________  ___    ___
+       |  ___  \   /    \   |  ___  \ |  |  /  /
+       |  |  \  \ /  /\  \  |  |  \  \|  |_/  /
+       |  |   )  /  /__\  \ |  |__/  /|  ___  \
+       |  |__/  /  ______  \|  ____  \|  |  \  \
+_______|_______/__/ ____ \__\__|___\__\__|___\__\____
+|  ___  \ |  ____/ /    \   |  ___  \ |  ____|  ___  \
+|  |  \  \|  |___ /  /\  \  |  |  \  \|  |___|  |  \  \
+|  |__/  /|  ____/  /__\  \ |  |   )  |  ____|  |__/  /
+|  ____  \|  |__/  ______  \|  |__/  /|  |___|  ____  \
+|__|   \__\____/__/      \__\_______/ |______|__|   \__\
+                https://darkreader.org
+*/
+/* User-Agent Style */
+html {
+  background-color: #101010 !important;
+}
+html, body, input, textarea, select {
+  background-color: #101010;
+}
+html, body, input, textarea, select {
+  border-color: #776f61;
+  color: #fffdeb;
+}
+a {
+  color: #6593c5;
+}
+table {
+  border-color: #5a5b57;
+}
+::placeholder {
+  color: #c3b9a8;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: #555620 !important;
+  color: #fffdeb !important;
+}
+::-webkit-scrollbar {
+  background-color: #1a1b1a;
+  color: #bbb19f;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #474845;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #5e5e5b;
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: #4b4c49;
+}
+::-webkit-scrollbar-corner {
+  background-color: #101010;
+}
+::selection {
+  background-color: #0b4991 !important;
+  color: #fffcea !important;
+}
+::-moz-selection {
+  background-color: #0b4991 !important;
+  color: #fffcea !important;
+}
+
+/* Invert Style */
+.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, embed[type="application/pdf"] {
+  filter: invert(100%) hue-rotate(180deg) grayscale(35%) sepia(25%) !important;
+}
+
+/* Variables Style */
+:root {
+ --darkreader-neutral-background: #0a0b0b;
+ --darkreader-neutral-text: #f2e8d7;
+ --darkreader-selection-background: #0b4991;
+ --darkreader-selection-text: #fffcea;
+}
+
+/* Modified CSS */
+:root {
+  --darkreader-bg--bg-color: #141413;
+}
+body {
+  background-color: var(--darkreader-bg--bg-color);
+}
+textarea {
+  border-color: rgb(63, 64, 61);
+  background-color: rgb(21, 21, 20);
+}
+
+button:hover {
+  background-color: rgb(31, 83, 25);
+}
+
+/* Override Style */
+.vimvixen-hint {
+  background-color: #6b5215 !important;
+  border-color: #d6bb5b !important;
+  color: #fffedd !important;
+}
+::placeholder {
+  opacity: 0.5 !important;
+}
+a[href="https://coinmarketcap.com/"] > svg[width="94"][height="16"] > path {
+  fill: var(--darkreader-neutral-text) !important;
+}
+#edge-translate-panel-body {
+  color: var(--darkreader-neutral-text) !important;
+}

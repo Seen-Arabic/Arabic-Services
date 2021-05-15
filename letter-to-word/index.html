@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="موقع لتحويل الحرف إلى كلمة"
+    />
+    <meta name="author" content="Youssef Mohamed" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الحرف إلى كلمة</title>
+    <!-- main CSS -->
+    <link href="css/main.css" rel="stylesheet" />
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="image/logo.svg" />
+  </head>
+
+  <body>
+    <main>
+      <h1 dir="auto" style="text-align: center">
+        تحويل الحرف إلى كلمة
+      </h1>
+      <p dir="auto" style="text-align: center">
+        موقع لتحويل الحرف إلى كلمة
+      </p>
+      <div class="textarea-box" dir="auto">
+        <label for="input_str">ضع الحروف التي تريد تحويلها إلى كلمات بين هذا الرمز (*)</label>
+        <textarea
+          id="input_str"
+          name="input_str"
+          placeholder="مثال: *ما* هذا"
+        ></textarea>
+      </div>
+      <div class="action_btn">
+        <button onclick="convertText()">تحويل النص</button>
+      </div>
+      
+      <div class="textarea-box">
+        <textarea
+          id="output_str"
+          name="output_str"
+          class="output_str"
+          placeholder="ميم ألف هذا"
+          readonly
+        ></textarea>
+      </div>
+      <div class="action_btn">
+        <button onclick="copy_to_clipboard()">نسخ النص</button>
+        <p id="saved" style="font-size: 12px; text-align: center; margin : 18px;"></p>
+      </div>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+</html>
