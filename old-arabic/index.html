@@ -1,58 +1,75 @@
+<!-- 
+  توضيح:
+نحن شباب مستقلون لا نتبع أي جهة ولا دولة.. 
+فكرة "س - seen" هو مشروع مفتوح المصدر
+وهدفه عمل محتوى يخدم المجتمع العربي 
+وقريبًا سننشئ محتوى تعليمي عام باللغة العربية.
+
+رضًا على شائعات.. نريد توضيح أن الكود المستخدم في الموقع يمكن لأي أحد مشاهدته عن طريق استخدام  chrome inspect element أو الطريقة الخاصة بأي متصفح آخر.. ولا يوجد شيء مخفي ولم نستخدم أي خادم (server) لا يُوضح ما بداخله.
+رضًا على أحد المشككين بالموقع
+أولًا: دالة الـip
+كانت توجد دالة برمجية لمعرفة الip الخاص بك.. وهذه كانت الطريقة الوحيدة لدينا لمعرفة عدد الزوار حيث أن ال ip رمز مختلف لكل زائر للموقع.. ولكنه لا يحدد مكانك أصلًا.. فقط يحدد من أي دولة أنت تستخدم هذا الموقع.. وحفاظًا على خصوصيتك قد أزلناها واستبدلناها بطريقة أخرى.
+
+ثانيًا:
+النصوص المكتوبة يتم تسجليها..
+بلى نُسجِّل هذه النصوص لغرض استخدامها في خدمات مستقبلية.. والآن نسجل النصوص دون تسجيل الـip الخاص بالزائر.
+
+ولأي استفسار يمكنك مراسلتنا على البريد الألكتروني 
+seendevelopment@gmail.com
+ -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="موقع لتحويل نصوص اللغة العربية إلى طريقة الكتابة القديمة قبل وضع النقاط على الحروف"
-    />
-    <meta name="author" content="seen - س" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>الرسم العربي القديم</title>
-    <!-- main CSS -->
-    <link href="css/main.css" rel="stylesheet" />
-    <!-- favicon -->
-    <link rel="icon" type="image/png" href="image/logo.svg" />
-  </head>
 
-  <body>
-    <main>
-      <h1 dir="auto" style="text-align: center">
-        الرسم العرٮى الٯدىم
-      </h1>
-      <p dir="auto" style="text-align: center">
-        موقع لتحويل نصوص اللغة العربية إلى طريقة الكتابة القديمة قبل وضع النقاط
-        على الحروف
-      </p>
-      <div class="textarea-box" dir="auto">
-        <label for="input_str">أدخل النص هنا:</label>
-        <textarea
-          id="input_str"
-          name="input_str"
-          placeholder="أدخل النص هنا..."
-        ></textarea>
-      </div>
-      <div class="action_btn">
-        <button onclick="convertText()">تحويل النص</button>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description"
+    content="موقع لتحويل نصوص اللغة العربية إلى طريقة الكتابة القديمة قبل وضع النقاط على الحروف" />
+  <meta name="author" content="Abdelrahman Bayoumi" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الرسم العربي القديم</title>
+  <!-- main CSS -->
+  <link href="css/main.css" rel="stylesheet" />
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="image/logo.svg" />
+</head>
 
-      <div class="textarea-box">
-        <textarea
-          id="output_str"
-          name="output_str"
-          class="output_str"
-          readonly
-        ></textarea>
-      </div>
-      <div class="action_btn">
-        <button class="blue-btn" onclick="copy_to_clipboard()">نسخ النص</button>
-        <p id="saved" style="font-size: 12px; text-align: center"></p>
-      </div>
-    </main>
+<body>
+  <main>
+    <h1 dir="auto" style="text-align: center">
+      الرسم العرٮى الٯدىم
+    </h1>
+    <p dir="auto" style="text-align: center">
+      موقع لتحويل نصوص اللغة العربية إلى طريقة الكتابة القديمة قبل وضع النقاط
+      على الحروف
+    </p>
+    <div class="textarea-box" dir="auto">
+      <label for="input_str">أدخل النص هنا:</label>
+      <textarea id="input_str" name="input_str" placeholder="أدخل النص هنا..."></textarea>
+    </div>
+    <div class="action_btn">
+      <button onclick="convertText()">تحويل النص</button>
+    </div>
 
-    <footer dir="auto">
-      للتواصل والاقتراحات: <a href="mailto:SeenDevelopment@gmail.com">SeenDevelopment@gmail.com</a>
-    </footer>
-    <script src="js/main.js"></script>
-  </body>
+    <div class="textarea-box">
+      <textarea id="output_str" name="output_str" class="output_str" readonly></textarea>
+    </div>
+    <div class="action_btn">
+      <button class="blue-btn" onclick="copy_to_clipboard()">نسخ النص</button>
+      <p id="saved" style="font-size: 12px; text-align: center"></p>
+    </div>
+  </main>
+
+  <footer dir="auto">
+    <div class="visitors"><a href="https://hits.seeyoufarm.com"><img
+          src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Farabic-services.ml%2Fold-arabic%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" /></a>
+    </div>
+    <div class="mail">
+
+      للتواصل والإقتراحات: <a href="mailto:seendevelopment@gmail.com">seendevelopment@gmail.com</a>
+
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+
 </html>
