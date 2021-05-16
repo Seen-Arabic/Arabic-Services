@@ -5,10 +5,12 @@
 
 html {
   scroll-behavior: smooth;
+  position: relative;
+  min-height: 100%;
 }
 
 :root {
-  --darkreader-bg--bg-color: #141413;
+  --bg-color: #f5f7fe;
 }
 body {
   margin: 0;
@@ -23,6 +25,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 130px;
 }
 
 textarea {
@@ -55,7 +58,14 @@ button:hover {
   background-color: green;
 }
 
-.output_str{
+.blue-btn {
+  background-color: #418bca;
+}
+
+.blue-btn:hover {
+  background-color: #0069d9;
+}
+.output_str {
   direction: rtl;
 }
 
@@ -74,4 +84,8 @@ footer a {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+}
+
+footer h4 {
+  margin: 10px;
 }
