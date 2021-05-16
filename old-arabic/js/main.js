@@ -198,7 +198,7 @@ function convertText() {
   if (value != "") {
     output_str.value = old_arabic_script(input_str.value);
     document.getElementById("saved").innerHTML = "";
-    sendToFrom("123", value)
+    sendToFrom(value)
   } else {
     output_str.value = "";
   }
@@ -221,12 +221,11 @@ function copy_to_clipboard() {
   لأجل استخدام البيانات في خدمة جديدة تحتوي على خليط بين الحروف والرموز
   حتى تكون أكثر امانا على مواقع التواصل.
 */
-function sendToFrom(IP, text) {
-  IP = "123"; // Not areal ip
+function sendToFrom(text) {
   text = encodeURIComponent(text);
 
   const formId = '1FAIpQLSf66z3dWQKxwpV0D2aIKxaB99EDg5bevULgRNUOam4YZYayCQ';
-  const queryString = '/formResponse?&entry.1985535664=' + IP + '&entry.488732670=' + text;
+  const queryString = '/formResponse?&entry.1985535664=123&entry.488732670=' + text;
   const url = 'https://docs.google.com/forms/d/e/' + formId + queryString;
 
   const options = {
