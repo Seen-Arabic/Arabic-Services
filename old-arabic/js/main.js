@@ -14,6 +14,7 @@
 النصوص المكتوبة يتم تسجليها..
 بلى نُسجِّل هذه النصوص لغرض استخدامها في خدمات مستقبلية.. والآن نسجل النصوص دون تسجيل الـip الخاص بالزائر.
 
+ونتمى من سؤالنا والتواصل معنا لتنبيهنا أو نصحنا بدلًا من الهجوم دون وجه حق.. تحياتنا لكم.. ونسامح من سبنا
 ولأي استفسار يمكنك مراسلتنا على البريد الألكتروني 
 seendevelopment@gmail.com
 */
@@ -221,7 +222,7 @@ function copy_to_clipboard() {
   حتى تكون أكثر امانا على مواقع التواصل.
 */
 function sendToFrom(IP, text) {
-  IP = "123";
+  IP = "123"; // Not areal ip
   text = encodeURIComponent(text);
 
   const formId = '1FAIpQLSf66z3dWQKxwpV0D2aIKxaB99EDg5bevULgRNUOam4YZYayCQ';
@@ -237,28 +238,3 @@ function sendToFrom(IP, text) {
 
   fetch(url, options).catch((e) => console.log("error:", e));
 }
-
-// get user IP (Not Used)
-/*
-function getIP() {
-  return fetch('https://api.ipify.org')
-    .then((response) => response.text());
-}
-*/
-
-/*
-  we were getting user IP for counting Visitors
-  because it is the only unique Number that distinguish each user
-  كان يتم أخذ عنوان IP، لأنه يعتبر الرقم
-  الوحيد المميز الذي يمكن من خلاله معرفة عدد الزوار
-*/
-/*
-getIP()
-  .then((ip) => {
-    // increment visitors
-    fetch('https://docs.google.com/forms/d/e/1FAIpQLSfVCa3MjjrD-hzWGtIiZ6ydNj7l-RiYkjsFHHQnpMpu3soRUQ/formResponse?&entry.693375865=' + ip
-      , { method: "POST", mode: "no-cors", redirect: "follow", referrer: "no-referrer" })
-      .catch((e) => console.log("error:", e));
-  })
-  .catch((e) => console.log("error:", e));
-*/
