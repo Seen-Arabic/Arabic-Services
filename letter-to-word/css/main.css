@@ -55,37 +55,44 @@ button:hover {
   background-color: green;
 }
 
-.output_str{
+.output_str {
   direction: rtl;
 }
+footer {
+  background-color: #33485d;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /*
-                        _______
-                       /       \
-                      .==.    .==.
-                     ((  ))==((  ))
-                    / "=="    "=="\
-                   /____|| || ||___\
-       ________     ____    ________  ___    ___
-       |  ___  \   /    \   |  ___  \ |  |  /  /
-       |  |  \  \ /  /\  \  |  |  \  \|  |_/  /
-       |  |   )  /  /__\  \ |  |__/  /|  ___  \
-       |  |__/  /  ______  \|  ____  \|  |  \  \
-_______|_______/__/ ____ \__\__|___\__\__|___\__\____
-|  ___  \ |  ____/ /    \   |  ___  \ |  ____|  ___  \
-|  |  \  \|  |___ /  /\  \  |  |  \  \|  |___|  |  \  \
-|  |__/  /|  ____/  /__\  \ |  |   )  |  ____|  |__/  /
-|  ____  \|  |__/  ______  \|  |__/  /|  |___|  ____  \
-|__|   \__\____/__/      \__\_______/ |______|__|   \__\
-                https://darkreader.org
-*/
-/* User-Agent Style */
+dark mode
+
 html {
   background-color: #101010 !important;
 }
-html, body, input, textarea, select {
+html,
+body,
+input,
+textarea,
+select {
   background-color: #101010;
 }
-html, body, input, textarea, select {
+html,
+body,
+input,
+textarea,
+select {
   border-color: #776f61;
   color: #fffdeb;
 }
@@ -129,20 +136,18 @@ select:-webkit-autofill {
   color: #fffcea !important;
 }
 
-/* Invert Style */
-.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, embed[type="application/pdf"] {
+.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, embed[type="application/pdf"]
+{
   filter: invert(100%) hue-rotate(180deg) grayscale(35%) sepia(25%) !important;
 }
 
-/* Variables Style */
 :root {
- --darkreader-neutral-background: #0a0b0b;
- --darkreader-neutral-text: #f2e8d7;
- --darkreader-selection-background: #0b4991;
- --darkreader-selection-text: #fffcea;
+  --darkreader-neutral-background: #0a0b0b;
+  --darkreader-neutral-text: #f2e8d7;
+  --darkreader-selection-background: #0b4991;
+  --darkreader-selection-text: #fffcea;
 }
 
-/* Modified CSS */
 :root {
   --darkreader-bg--bg-color: #141413;
 }
@@ -158,7 +163,6 @@ button:hover {
   background-color: rgb(31, 83, 25);
 }
 
-/* Override Style */
 .vimvixen-hint {
   background-color: #6b5215 !important;
   border-color: #d6bb5b !important;
@@ -167,9 +171,12 @@ button:hover {
 ::placeholder {
   opacity: 0.5 !important;
 }
-a[href="https://coinmarketcap.com/"] > svg[width="94"][height="16"] > path {
+a[href="https://coinmarketcap.com/"] > svg[width="94"][height="16"] > path
+{
   fill: var(--darkreader-neutral-text) !important;
 }
 #edge-translate-panel-body {
   color: var(--darkreader-neutral-text) !important;
 }
+
+
