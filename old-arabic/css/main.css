@@ -11,11 +11,33 @@ html {
 
 :root {
   --bg-color: #f5f7fe;
+  --dark: #33485d;
 }
+
 body {
   margin: 0;
   padding: 0;
   background-color: var(--bg-color);
+}
+
+nav {
+  background-color: #000;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+nav .logo {
+  max-width: 50px;
+  max-height: auto;
 }
 
 main {
@@ -72,12 +94,16 @@ button:hover {
 footer {
   background-color: #33485d;
   color: #fff;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 footer a {
@@ -86,6 +112,27 @@ footer a {
   cursor: pointer;
 }
 
+footer .logo {
+  max-width: 100px;
+  max-height: auto;
+}
+
 footer h4 {
-  margin: 10px;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+footer div{
+  padding-top: 10px;
+}
+
+
+@media screen and (max-width: 600px) {
+  main {
+    margin-bottom: 300px;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
 }
