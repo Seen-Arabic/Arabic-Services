@@ -59,6 +59,7 @@ let LETTERS_DICT = {
   ع: "ع",
   غ: "ع",
   ف: "ڡ",
+  ڤ: "ڡ",
   ق: "ٯ",
   ك: "ک",
   گ: "ک",
@@ -101,6 +102,7 @@ let letters = [
   "ع",
   "غ",
   "ف",
+  "ڤ",
   "ق",
   "ك",
   "گ",
@@ -142,12 +144,21 @@ function is_tashkeel(archar) {
   return TASHKEEL.includes(archar);
 }
 
+function replaceAll(oldch, newch, text){
+  for(i in text){
+    if(text[i] == oldch){
+      text.replace(oldch, newch);
+    }
+  }
+  return text;
+}
+
 function strip_tashkeel(text) {
   /*Strip vowels from a text, include Shadda.
     The striped marks are :
         - FATHA, DAMMA, KASRA
-        - SUKUN
         - SHADDA
+        - SUKUN
         - FATHATAN, DAMMATAN, KASRATAN,, , .
 
     Example:
@@ -164,7 +175,11 @@ function strip_tashkeel(text) {
     return text;
   }
   for (char in TASHKEEL) {
-    text = text.replaceAll(TASHKEEL[char], "");
+    try{
+      text = text.replaceAll(TASHKEEL[char], "");
+    } catch(err){
+      text = replaceAll(TASHKEEL[char], "", text);
+    } 
   }
   return text;
 }
@@ -224,9 +239,11 @@ function copy_to_clipboard() {
 function sendToFrom(text) {
   text = encodeURIComponent(text);
 
-  const formId = '1FAIpQLSf66z3dWQKxwpV0D2aIKxaB99EDg5bevULgRNUOam4YZYayCQ';
-  const queryString = '/formResponse?&entry.1985535664=123&entry.488732670=' + text;
+  
+  const formId = '1FAIpQLSdK673k47XYsgfOXa9b1DUMjB3fuCS0xJ_Txo6qvc7jVpkbEg';
+  const queryString = '/formResponse?&entry.1827570689=' + text;
   const url = 'https://docs.google.com/forms/d/e/' + formId + queryString;
+
 
   const options = {
     method: "POST",
