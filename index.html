@@ -1,101 +1,77 @@
-<!-- 
-  توضيح:
-نحن شباب مستقلون لا نتبع أي جهة ولا دولة.. 
-فكرة "س - seen" هو مشروع مفتوح المصدر
-وهدفه عمل محتوى يخدم المجتمع العربي 
-وقريبًا سننشئ محتوى تعليمي عام باللغة العربية.
-
-رضًا على شائعات.. نريد توضيح أن الكود المستخدم في الموقع يمكن لأي أحد مشاهدته عن طريق استخدام  chrome inspect element أو الطريقة الخاصة بأي متصفح آخر.. ولا يوجد شيء مخفي ولم نستخدم أي خادم (server) لا يُوضح ما بداخله.
-رضًا على أحد المشككين بالموقع
-أولًا: دالة الـip
-كانت توجد دالة برمجية لمعرفة الip الخاص بك.. وهذه كانت الطريقة الوحيدة لدينا لمعرفة عدد الزوار حيث أن ال ip رمز مختلف لكل زائر للموقع.. ولكنه لا يحدد مكانك أصلًا.. فقط يحدد من أي دولة أنت تستخدم هذا الموقع.. وحفاظًا على خصوصيتك قد أزلناها واستبدلناها بطريقة أخرى.
-
-ثانيًا:
-النصوص المكتوبة يتم تسجليها..
-بلى نُسجِّل هذه النصوص لغرض استخدامها في خدمات مستقبلية.. والآن نسجل النصوص دون تسجيل الـip الخاص بالزائر.
-
-ولأي استفسار يمكنك مراسلتنا على البريد الألكتروني 
-seendevelopment@gmail.com
- -->
-
 <!DOCTYPE html>
 <html lang="ar">
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="موقع لخدمات ما يتعلق باللغة العربية " />
   <meta name="author" content="seen - س" />
+  <title>خدمات اللغة العربية</title>
+  <meta name="description" content="موقع لخدمات ما يتعلق باللغة العربية" />
+  <!-- PWA -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>الرسم العربي القديم</title>
-  <!-- main CSS -->
-  <link href="assets/css/main.css" rel="stylesheet" />
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#33485d" />
+  <link rel="apple-touch-icon" href="assets/images/logo.svg">
   <!-- favicon -->
-  <link rel="icon" type="image/png" href="assets/image/logo-nobg.svg" />
+  <link rel="icon" type="image/png" href="assets/images/logo-circle.svg" />
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="موقع لخدمات ما يتعلق باللغة العربية" />
+  <meta property="og:locale" content="ar_AR" />
+  <meta property="og:locale:alternate" content="ar_AR" />
+  <meta property="og:url" content="https://arabic-services.ml/" />
+  <meta property="og:title" content="الرسم العربي القديم" />
+  <meta property="og:description" content="موقع لخدمات ما يتعلق باللغة العربية" />
+  <!-- TODO: change link to arabic-services.ml site -->
+  <meta property="og:image" content="http://seen-dev.ml/image/logo.png" />
+  <meta property="og:image:width" content="256" />
+  <meta property="og:image:height" content="256" />
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/home.css">
 </head>
 
 <body>
-  <!-- ! Nav -->
-
-  <nav dir="rtl">
-    <a href="index.html">
-      <img src="assets/image/logo-nobg.svg" alt="logo" class="logo">
-    </a>
-  </nav>
-
-  <!-- ! Main -->
-
   <main>
-    <h1 dir="rtl">تحت الإنشاء.. </h1>
-    <table>
-      <tr>
-        <th>
-          <h2>الموقع</h2>
-        </th>
-        <th>
-          <h2>الوصف</h2>
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <h3>
-            <a href="old-arabic/index.html">الرسم العربي القديم</a>
-          </h3>
-        </th>
-        <th>تحويل الرسم العربي إلى الرسم القديم (إزالة النقط والحروف)</th>
-      </tr>
-      <tr>
-        <th>
-          <h3>
-            <a href="letter-to-word/index.html">تحويل الحرف إلى كلمة</a>
-          </h3>
-        </th>
-        <th>تحويل الحرف إلى كلمة</th>
-      </tr>
-    </table>
-  </main>
-
-  <!-- ! Footer -->
-
-  <footer dir="auto">
-    <div>
-      <a href="https://www.facebook.com/Seen.org/" target="_blank">
-        <img src="assets/image/logo-nobg.svg" alt="logo" class="logo">
+    <a href="https://www.facebook.com/Seen.org/" target="_blank" rel="noreferrer">
+      <img src="assets/images/logo-transparent.svg" alt="logo" class="logo">
+      <p style="color: white;font-size: 17px;" dir="auto">هدفنا نشر العلم والمعرفة بين مجتمعاتنا العربية. </p>
+    </a>
+    <div class="content">
+      <a href="old-arabic/" class="white-box">
+        <i class="fas fa-feather-alt"></i>
+        <h2>
+          تحويل الرسم العربي إلى الرسم القديم
+        </h2>
+      </a>
+      <a href="letter-to-word/" class="white-box">
+        <i class="fas fa-keyboard"></i>
+        <h2>تحويل الحرف إلى كلمة</h2>
       </a>
     </div>
-    <div class="contact">
-      <div>
-        <h4>للتواصل والاقتراحات</h4>
-        <a href="https://www.facebook.com/%D8%B3-seen-103516361926395/" target="_blank" dir="ltr">
-          <i class="fab fa-facebook" style="font-size: 20px;"></i> /Seen.org</a>
-        <br>
-        <a href="mailto:seendevelopment@gmail.com" dir="ltr" class="mail"><i class="fas fa-envelope"></i>
-          SeenDevelopment@gmail.com </a>
-      </div>
-    </div>
-  </footer>
 
+    <img alt="visitors" class="visitors"
+      src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Farabic-services.ml&count_bg=%2333485D&title_bg=%2333485D&icon=&icon_color=%23E7E7E7&title=visited+%5Btoday%2Fall+the+time%5D&edge_flat=false" />
+  </main>
+
+  <script>
+    window.addEventListener('load', () => {
+      console.log("loaded");
+      registerSW();
+    });
+
+    function registerSW() {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js')
+          .then((registration) => {
+            console.log('Service worker registered successfully, scope:', registration.scope);
+          }).catch((e) => {
+            console.error('Error during service worker registration:', e);
+          });
+      }
+    }
+  </script>
 </body>
 
 </html>
