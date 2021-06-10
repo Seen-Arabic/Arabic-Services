@@ -346,7 +346,6 @@ function convertText(mode) {
     document.getElementById("saved").innerHTML = "";
     document.getElementById("out-box").className = "";
     document.getElementById("out-box").classList.add("out-box-show");
-    statistics(mode)
   } else {
     output_str.value = "";
   }
@@ -405,16 +404,4 @@ function convert() {
   } else if (encryptCommonCheck.checked && !encryptAllCheck.checked && !oldArabicCheck.checked) {
     convertText("encrypt-popular");
   }
-}
-
-function statistics(mode) {
-  var requestOptions = {
-    method: 'POST',
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ "mode": mode }),
-    withCredentials: true,
-    credentials: "include",
-  };
-  fetch("https://arabic-services-server.herokuapp.com/statistics", requestOptions)
-    .catch(error => console.log('error', error));
 }
