@@ -7,8 +7,8 @@
 
 | الخدمة | الرابط 
 | ---- | --------
-| تحويل الرسم العربي إلى الرسم القديم (إزالة النقط والحروف) | https://arabic-services.ml/old-arabic/
-| تحويل الحرف إلى كلمة | https://arabic-services.ml/letter-to-word/ 
+| تحويل الرسم العربي إلى الرسم القديم (إزالة النقط والحروف) | https://seen-arabic.github.io/Arabic-Services/old-arabic/
+| تحويل الحرف إلى كلمة | https://seen-arabic.github.io/Arabic-Services/letter-to-word/ 
 
 
 </div>
