@@ -806,6 +806,14 @@ function getSelection() {
   oldArabicCheck.checked = oldArabic === "true";
   encryptCommonCheck.checked = encryptCommon === "true";
   encryptAllCheck.checked = encryptAll === "true";
+
+  if (
+    !oldArabicCheck.checked &&
+    !encryptCommonCheck.checked &&
+    !encryptAllCheck.checked
+  ) {
+    oldArabicCheck.checked = true;
+  }
 }
 
 // execute on load
