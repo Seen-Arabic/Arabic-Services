@@ -1,134 +1,212 @@
 <!DOCTYPE html>
 <html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <title>الرسم العربي القديم</title>
+    <meta
+      name="description"
+      content="موقع لتحويل نصوص اللغة العربية إلى طريقة الكتابة القديمة قبل وضع النقاط على الحروف أي الكتابة بدون نقط"
+    />
+    <meta name="author" content="seen - س" />
+    <!-- PWA -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#33485d" />
+    <link rel="apple-touch-icon" href="../assets/images/logo.svg" />
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/logo-circle.svg" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:site_name"
+      content="موقع لتحويل نصوص اللغة العربية إلى طريقة الكتابة القديمة قبل وضع النقاط على الحروف"
+    />
+    <meta property="og:locale" content="ar_AR" />
+    <meta property="og:locale:alternate" content="ar_AR" />
+    <meta
+      property="og:url"
+      content="https://seen-arabic.github.io/Arabic-Services/old-arabic/"
+    />
+    <meta property="og:title" content="الرسم العربي القديم" />
+    <meta
+      property="og:description"
+      content="أداة لتغيير من شكل النصوص وتشفيرها بحيث تتخطي الحجب والحظر علي مواقع التواصل الإجتماعي المختلفة"
+    />
+    <meta
+      property="og:image"
+      content="https://seen-arabic.github.io/image/logo.png"
+    />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <!-- Main CSS -->
+    <link href="../assets/css/main.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>الرسم العربي القديم</title>
-  <meta name="description"
-    content="موقع لتحويل نصوص اللغة العربية إلى طريقة الكتابة القديمة قبل وضع النقاط على الحروف أي الكتابة بدون نقط" />
-  <meta name="author" content="seen - س" />
-  <!-- PWA -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="manifest" href="../manifest.json">
-  <meta name="theme-color" content="#33485d" />
-  <link rel="apple-touch-icon" href="../assets/images/logo.svg">
-  <!-- favicon -->
-  <link rel="icon" type="image/png" href="../assets/images/logo-circle.svg" />
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name"
-    content="موقع لتحويل نصوص اللغة العربية إلى طريقة الكتابة القديمة قبل وضع النقاط على الحروف" />
-  <meta property="og:locale" content="ar_AR" />
-  <meta property="og:locale:alternate" content="ar_AR" />
-  <meta property="og:url" content="https://arabic-services.ml/old-arabic/" />
-  <meta property="og:title" content="الرسم العربي القديم" />
-  <meta property="og:description"
-    content="أداة لتغيير من شكل النصوص وتشفيرها بحيث تتخطي الحجب والحظر علي مواقع التواصل الإجتماعي المختلفة" />
-  <!-- TODO: change link to arabic-services.ml site -->
-  <meta property="og:image" content="http://seen-dev.ml/image/logo.png" />
-  <meta property="og:image:width" content="256" />
-  <meta property="og:image:height" content="256" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  <!-- Main CSS -->
-  <link href="../assets/css/main.css" rel="stylesheet" />
-</head>
+  <body>
+    <!-- Navbar -->
+    <nav dir="rtl">
+      <a href="../index.html">
+        <img
+          src="../assets/images/logo-transparent.svg"
+          alt="logo"
+          class="logo"
+        />
+      </a>
+      <a href="../index.html">
+        الصفحة الرئيسية
+        <i
+          class="fas fa-home"
+          style="margin-right: 10px; margin-left: 10px"
+        ></i>
+      </a>
+    </nav>
 
-<body>
-  <nav dir="rtl">
-    <a href="../index.html">
-      <img src="../assets/images/logo-transparent.svg" alt="logo" class="logo">
-    </a>
-    <a href="../index.html">
-      الصفحة الرئيسية
-      <i class="fas fa-home" style="margin-right: 10px;margin-left: 10px;"></i>
-    </a>
-  </nav>
-  <main>
-    <h1 dir="auto">
-      الرسم العرٮى الٯدىم
-    </h1>
-    <p dir="auto" style="text-align: center;margin-top: 10px;">
-      موقع لتحويل نصوص اللغة العربية إلى طريقة الكتابة القديمة قبل وضع النقاط
-      على الحروف
-    </p>
-    <div class="textarea-box" dir="auto">
-      <label for="input_str">أدخل النص هنا:</label>
-      <div class="shadow">
-        <textarea id="input_str" name="input_str" placeholder="بسم الله.." rows="7"></textarea>
-        <div class="choicesbox">
-          <div>
-            <input type="checkbox" id="oldArabicCheck" name="oldArabicCheck" checked>
-            <label for="oldArabicCheck">الرسم العربي القديم</label>
-          </div>
-          <div>
-            <input type="checkbox" id="encryptCommonCheck" name="encryptCommonCheck">
-            <label for="encryptCommonCheck">تشفير الكلمات الشائعة</label>
-          </div>
-          <div>
-            <input type="checkbox" id="encryptAllCheck" name="encryptAllCheck">
-            <label for="encryptAllCheck">تشفير الكل</label>
+    <!-- Main Content -->
+    <main>
+      <!-- Title & description -->
+      <h1 dir="auto">الرسم العرٮى الٯدىم</h1>
+      <p dir="auto" style="text-align: center; margin-top: 10px">
+        موقع لتحويل نصوص اللغة العربية إلى طريقة الكتابة القديمة قبل وضع النقاط
+        على الحروف
+      </p>
+
+      <div class="textarea-box" dir="auto">
+        <label for="input_str">أدخل النص هنا:</label>
+        <div class="shadow">
+          <textarea
+            id="input_str"
+            name="input_str"
+            placeholder="بسم الله.."
+            rows="7"
+          ></textarea>
+          <div class="choicesbox">
+            <div>
+              <input
+                type="checkbox"
+                id="oldArabicCheck"
+                name="oldArabicCheck"
+                checked
+              />
+              <label for="oldArabicCheck">الرسم العربي القديم</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="encryptCommonCheck"
+                name="encryptCommonCheck"
+              />
+              <label for="encryptCommonCheck">تشفير الكلمات الشائعة</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="encryptAllCheck"
+                name="encryptAllCheck"
+              />
+              <label for="encryptAllCheck">تشفير الكل</label>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="action_btn">
-      <button onclick="convert()">
-        تحويل
-        <i class="fas fa-redo"></i>
-      </button>
-    </div>
-
-    <div id="out-box" class="out-box-hide">
-      <div class="textarea-box" style="border-radius: 10px;">
-        <textarea id="output_str" name="output_str" class="output_str" rows="5" readonly></textarea>
+      <div class="action_btn">
+        <button onclick="convert()">
+          تحويل
+          <i class="fas fa-redo"></i>
+        </button>
       </div>
+
+      <div id="out-box" class="out-box-hide">
+        <div class="textarea-box" style="border-radius: 10px">
+          <textarea
+            id="output_str"
+            name="output_str"
+            class="output_str"
+            rows="5"
+            readonly
+          ></textarea>
+        </div>
+        <div>
+          <button class="blue-btn" onclick="copy_to_clipboard()">
+            <i class="far fa-copy"></i>
+            نسخ النص
+          </button>
+          <p id="saved" style="font-size: 12px; text-align: center"></p>
+        </div>
+        <div class="like-us">
+          <a
+            href="https://www.facebook.com/Seen.org/"
+            target="_blank"
+            rel="noreferrer"
+            dir="auto"
+          >
+            لا تنس الإعجاب بصفحتنا
+            <i class="fab fa-facebook" style="font-size: 20px"></i>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer dir="auto">
       <div>
-        <button class="blue-btn" onclick="copy_to_clipboard()">
-          <i class="far fa-copy"></i>
-          نسخ النص</button>
-        <p id="saved" style="font-size: 12px; text-align: center"></p>
-      </div>
-      <div class="like-us">
-        <a href="https://www.facebook.com/Seen.org/" target="_blank" rel="noreferrer" dir="auto">
-          لا تنس الإعجاب بصفحتنا
-          <i class="fab fa-facebook" style="font-size: 20px;"></i>
+        <a
+          href="https://www.facebook.com/Seen.org/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src="../assets/images/logo-transparent.svg"
+            alt="logo"
+            class="logo"
+          />
+          <p>هدفنا نشر العلم والمعرفة بين مجتمعاتنا العربية.</p>
         </a>
       </div>
-    </div>
-  </main>
+      <div class="contact">
+        <div>
+          <h2>للتواصل والاقتراحات</h2>
+          <div class="social-links">
+            <a
+              href="https://www.facebook.com/Seen.org/"
+              target="_blank"
+              rel="noreferrer"
+              dir="ltr"
+            >
+              <i class="fab fa-facebook" style="font-size: 20px"></i>
+              /Seen.org
+            </a>
 
-  <footer dir="auto">
-    <div>
-      <a href="https://www.facebook.com/Seen.org/" target="_blank" rel="noreferrer">
-        <img src="../assets/images/logo-transparent.svg" alt="logo" class="logo">
-        <p>هدفنا نشر العلم والمعرفة بين مجتمعاتنا العربية. </p>
-      </a>
-    </div>
-    <div class="contact">
-      <div>
-        <h2>للتواصل والاقتراحات</h2>
-        <a href="https://www.facebook.com/Seen.org/" target="_blank" rel="noreferrer" dir="ltr">
-          <i class="fab fa-facebook" style="font-size: 20px;"></i>
-
-          /Seen.org</a>
-        <br>
-        <a href="mailto:seendevelopment@gmail.com" dir="ltr" class="mail">
-          <i class="fas fa-envelope"></i>
-          SeenDevelopment@gmail.com</a>
+            <a
+              href="https://www.facebook.com/Seen.org/"
+              target="_blank"
+              rel="noreferrer"
+              dir="ltr"
+            >
+              <i class="fab fa-telegram" style="font-size: 20px"></i>
+              @seen_arabic
+            </a>
+          </div>
+          <a href="mailto:seendevelopment@gmail.com" dir="ltr" class="mail">
+            <i class="fas fa-envelope"></i>
+            SeenDevelopment@gmail.com</a
+          >
+        </div>
+        <div class="visitors">
+          <img
+            alt="visitors"
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Farabic-services.ml%2Fold-arabic%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visited+%5Btoday%2Fall+the+time%5D&edge_flat=false"
+          />
+        </div>
       </div>
-      <div class="visitors">
-        <img alt="visitors"
-          src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Farabic-services.ml%2Fold-arabic%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visited+%5Btoday%2Fall+the+time%5D&edge_flat=false" />
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- <script src="https://unpkg.com/popper.js@1"></script>
-  <script src="https://unpkg.com/tippy.js@4"></script> -->
-  <script src="../assets/js/oldArabic.js"></script>
-</body>
-
+    <script src="../assets/js/oldArabic.js"></script>
+  </body>
 </html>
