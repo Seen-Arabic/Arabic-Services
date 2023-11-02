@@ -57,7 +57,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 180px;
+  margin-bottom: 220px;
 }
 
 .illustration {
@@ -195,7 +195,7 @@ footer {
   right: 0;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -224,6 +224,13 @@ footer div {
   padding-top: 10px;
 }
 
+.social-links{
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 @media screen and (max-width: 640px) {
   main {
     margin-bottom: 350px;
@@ -243,5 +250,4 @@ footer div {
   main {
     margin-bottom: 400px;
   }
-
 }
