@@ -78,7 +78,7 @@ main {
 .like-us {
   padding-top: 20px;
 }
-.like-us a{
+.like-us a {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
@@ -224,7 +224,7 @@ footer div {
   padding-top: 10px;
 }
 
-.social-links{
+.social-links {
   padding: 0px;
   display: flex;
   flex-direction: column;
@@ -233,18 +233,20 @@ footer div {
 
 @media screen and (max-width: 640px) {
   main {
-    margin-bottom: 350px;
+    margin-bottom: 380px;
+  }
+  .home-page-text{
+    display: none;
   }
   footer {
     flex-direction: column;
     align-items: center;
   }
-  .choicesbox{
+  .choicesbox {
     flex-direction: column;
     align-items: flex-start;
   }
 }
-
 
 @media screen and (max-width: 374px) {
   main {
