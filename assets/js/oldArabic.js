@@ -435,78 +435,7 @@ let LETTERS_DICT = {
 };
 
 /// END GLOBAL
-/// BEGIN OLD ARABIC SCRIPT
-function is_alpha(word) {
-  flag = word.search(/^[\u0621-\u064A0-9 ]+$/) != -1;
-  return flag;
-}
 
-function is_vocalized(word) {
-  if (is_alpha(word)) {
-    return false;
-  }
-  flag = false;
-  for (char in word) {
-    if (is_tashkeel(word[char])) {
-      flag = true;
-      break;
-    }
-  }
-  return flag;
-}
-
-function is_tashkeel(archar) {
-  return TASHKEEL.includes(archar);
-}
-
-function replaceAll(oldch, newch, text) {
-  for (i in text) {
-    if (text[i] == oldch) {
-      text.replace(oldch, newch);
-    }
-  }
-  return text;
-}
-
-function strip_tashkeel(text) {
-  if (text == null) {
-    return text;
-  }
-  for (char in TASHKEEL) {
-    try {
-      text = text.replaceAll(TASHKEEL[char], "");
-    } catch (err) {
-      text = replaceAll(TASHKEEL[char], "", text);
-    }
-  }
-  return text;
-}
-
-function old_arabic_script(sentence) {
-  sentence = strip_tashkeel(sentence);
-  var new_sentence = "";
-  sentence_len = sentence.length;
-  for (letter = 0; letter < sentence_len; letter++) {
-    if (!letters.includes(sentence[letter])) {
-      new_sentence += sentence[letter];
-    } else {
-      new_sentence += LETTERS_DICT[sentence[letter]];
-      if (sentence[letter] == "ن") {
-        var next_letter = letter + 1;
-        if (next_letter < sentence_len) {
-          var temp = new_sentence.substring(0, new_sentence.length - 1);
-          if (letters.includes(sentence[next_letter])) {
-            temp += LETTERS_DICT["ب"];
-            new_sentence = temp;
-          }
-        }
-      }
-    }
-  }
-  return strip_tashkeel(new_sentence);
-}
-
-/// END OLD ARABIC SCRIPT
 /// ==================================================== \\\
 
 /// BEGIN STRING MANIPULATION
@@ -653,39 +582,40 @@ function tashfeer(string, lvl = 0) {
 /// FROM UI
 function each_word(string, level = 0) {
   std_ratio = 70;
-  if (level == 0) {
-    return old_arabic_script(string);
-  } else if (level == 1) {
-    str = "";
-    for (let i of string.split(" ")) {
-      add = panned_ratio(remove_addons(i)) >= std_ratio ? true : false;
-      if (add) {
-        str += tashfeer(i, level + (add ? 1 : 0)) + " ";
-      } else {
-        str += old_arabic_script(i) + " ";
+  switch (level) {
+    case 0:
+      return ArabicService.toOldArabic(string);
+    case 1:
+      str = "";
+      for (let i of string.split(" ")) {
+        add = panned_ratio(remove_addons(i)) >= std_ratio ? true : false;
+        if (add) {
+          str += tashfeer(i, level + (add ? 1 : 0)) + " ";
+        } else {
+          str += ArabicService.toOldArabic(i) + " ";
+        }
       }
-    }
-    return str;
-  } else if (level == 2) {
-    str = "";
-    for (let i of string.split(" ")) {
+      return str;
+    case 2:
+      str = ArabicServices.tashfeer(string);
+      for (let i of string.split(" ")) {
+        level = 1;
+        add = panned_ratio(remove_addons(i)) >= std_ratio ? true : false;
+        str += tashfeer(i, level + (add ? 1 : 0)) + " ";
+      }
+      return str;
+    default:
       level = 1;
-      add = panned_ratio(remove_addons(i)) >= std_ratio ? true : false;
-      str += tashfeer(i, level + (add ? 1 : 0)) + " ";
-    }
-    return str;
-  } else {
-    level = 1;
-    str = "";
-    for (let i of string.split(" ")) {
-      add = panned_ratio(remove_addons(i)) >= std_ratio ? true : false;
-      if (add) {
-        str += tashfeer(i, level + (add ? 1 : 0)) + " ";
-      } else {
-        str += i + " ";
+      str = "";
+      for (let i of string.split(" ")) {
+        add = panned_ratio(remove_addons(i)) >= std_ratio ? true : false;
+        if (add) {
+          str += tashfeer(i, level + (add ? 1 : 0)) + " ";
+        } else {
+          str += i + " ";
+        }
       }
-    }
-    return str;
+      return str;
   }
 }
 modes = {
