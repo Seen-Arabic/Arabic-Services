@@ -1,31 +1,30 @@
-const cacheName = 'services-v2.2.0';
+const cacheName = "services-v2.2.2";
 const staticAssets = [
-  './',
-  './404.html',
-  './index.html',
-  './assets/images/logo-transparent.svg',
-  './assets/images/logo-circle.svg',
-  './assets/images/logo.svg',
-  './assets/css/home.css',
-  './assets/css/main.css',
-  './assets/js/oldArabic.js',
-  './assets/js/letterToWord.js',
-  './letter-to-word/index.html',
-  './old-arabic/index.html'
+  "./",
+  "./404.html",
+  "./index.html",
+  "./assets/images/logo-transparent.svg",
+  "./assets/images/logo-circle.svg",
+  "./assets/images/logo.svg",
+  "./assets/css/home.css",
+  "./assets/css/main.css",
+  "./assets/js/oldArabic.js",
+  "./assets/js/letterToWord.js",
+  "./letter-to-word/index.html",
+  "./old-arabic/index.html",
 ];
 
-
-self.addEventListener('install', async e => {
+self.addEventListener("install", async (e) => {
   const cache = await caches.open(cacheName);
   await cache.addAll(staticAssets);
   return self.skipWaiting();
 });
 
-self.addEventListener('activate', e => {
+self.addEventListener("activate", (e) => {
   self.clients.claim();
 });
 
-self.addEventListener('fetch', async e => {
+self.addEventListener("fetch", async (e) => {
   const req = e.request;
   const url = new URL(req.url);
 
