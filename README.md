@@ -7,7 +7,7 @@
 
 ## 📦 Repositories - المستودعات
 
-- ### [arabic-services-js](https://github.com/Seen-Arabic/arabic-services-js) 
+- ### [arabic-services-js](https://github.com/Seen-Arabic/Arabic-Services-JavaScript/) 
    - JavaScript (Node & Web browser) implementation
 - ### [arabic-services-java](https://github.com/Seen-Arabic/Arabic-Services-Java)
    - Java implementation with maven
