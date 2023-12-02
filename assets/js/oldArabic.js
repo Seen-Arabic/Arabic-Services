@@ -3,11 +3,11 @@ function each_word(string, level = 0) {
 		case 0:
 			return ArabicServices.toOldArabic(string);
 		case 1:
-			return ArabicServices.toOldArabicAndTashfeerPannedWords(string);
+			return ArabicServices.toOldArabicAndTashfeerBannedWords(string);
 		case 2:
 			return ArabicServices.tashfeer(string);
 		default:
-			return ArabicServices.tashfeerPannedWords(string, 2);
+			return ArabicServices.tashfeerBannedWords(string, 2);
 	}
 }
 
