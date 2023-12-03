@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/earlyaccess/droidarabickufi.css?display=swap');
+
 * {
 	box-sizing: border-box;
+	font-family: 'Droid Arabic Kufi';
 }
 
 html {
