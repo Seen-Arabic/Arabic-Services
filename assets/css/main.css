@@ -80,12 +80,17 @@ nav .nav-title {
 .slider-container {
 	width: 100%;
 	display: flex;
-	/* overflow: hidden; */
-
+	user-select: none;
 	flex-wrap: nowrap;
 	overflow-y: auto;
 	cursor: pointer;
-	gap: 10px; /* Adjust the gap as needed */
+	gap: 10px;
+
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+.slider-container::-webkit-scrollbar {
+	display: none;
 }
 
 .slider-container h3 {

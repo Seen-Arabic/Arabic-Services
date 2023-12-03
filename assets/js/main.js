@@ -60,7 +60,6 @@ let selectedSlideId = 'service-toOldArabic';
 
 function selectService(functionName, id) {
 	if (isDrag) return; // Ignore if the action is a drag
-	console.log('[selectService]', functionName, id);
 	// remove active slide
 	const oldSlide = document.getElementById(selectedSlideId);
 	oldSlide.classList.remove('active-slide');
@@ -71,7 +70,6 @@ function selectService(functionName, id) {
 	slide.classList.add('active-slide');
 	// init service data
 	const service = SERVICES.find((service) => service.function === functionName);
-	console.log('[selectService] service', service);
 	serviceTitle.innerText = service.title;
 	serviceDescription.innerText = service.description;
 	inputTextArea.placeholder = service.inputPlaceholder || '';
@@ -80,7 +78,6 @@ function selectService(functionName, id) {
 }
 
 function convert() {
-	console.log('[convert]', selectedServiceFunction);
 	outputTextArea.value = ArabicServices[selectedServiceFunction](inputTextArea.value);
 }
 
@@ -100,34 +97,24 @@ let isDrag = false;
 const dragThreshold = 5; // Threshold in pixels for considering the action as a drag
 
 slider.addEventListener('mousedown', (e) => {
-	console.log('[mousedown]');
 	isDown = true;
 	isDrag = false; // Reset the drag status on mousedown
-	slider.classList.add('slider-active');
 	startX = e.pageX - slider.offsetLeft;
 	scrollLeft = slider.scrollLeft;
 });
 const mouseleave = () => {
-	console.log('[mouseleave]');
 	isDown = false;
-	slider.classList.remove('slider-active');
 };
 slider.addEventListener('mouseleave', mouseleave);
 
 slider.addEventListener('mouseup', () => {
-	if (isDrag) {
-		// Handle drag end
-		console.log('[drag end]');
-	} else {
-		// Handle click
-		console.log('[click]');
+	if (!isDrag) {
 		selectService(selectedServiceFunction, selectedSlideId);
 	}
 	mouseleave();
 });
 
 slider.addEventListener('mousemove', (e) => {
-	console.log('[mousemove]');
 	if (!isDown) return;
 	e.preventDefault();
 	const x = e.pageX - slider.offsetLeft;
