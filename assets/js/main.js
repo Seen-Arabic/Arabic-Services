@@ -1,21 +1,5 @@
 const SERVICES = [
 	{
-		title: 'إزالة التشكيل',
-		description: 'إزالة التشكيل من النص العربي',
-		icon: 'fa-solid fa-folder',
-		function: 'removeTashkeel',
-		inputPlaceholder: 'الخَيْلُ وَاللّيْلُ وَالبَيْداءُ تَعرِفُني',
-		outputPlaceholder: 'الخيل والليل والبيداء تعرفني',
-	},
-	{
-		title: 'إزالة التطويل',
-		description: 'إزالة التطويل من النص العربي',
-		icon: 'fa-solid fa-folder',
-		function: 'removeTatweel',
-		inputPlaceholder: 'كن جميـــلا ترى الوجــود جميـــــلا',
-		outputPlaceholder: 'كن جميلا ترى الوجود جميلا',
-	},
-	{
 		title: 'الرسم العربي القديم (بدون نقاط)',
 		description: 'تحويل النص العربي إلى الرسم العربي القديم أي قبل وضع النقاط على الحروف والهمزات.',
 		icon: 'fa-solid fa-folder',
@@ -31,7 +15,50 @@ const SERVICES = [
 		inputPlaceholder: 'هذا النص مشفر',
 		outputPlaceholder: 'هـۮו اڵـݔص مـݭفـݛ',
 	},
+	{
+		title: 'تشفير الكلمات المحظورة (الشائعة)',
+		description:
+			'استبدال النصوص العربية المحظورة بأحرف مشابهة بصريًا لأغراض الترميز. (الكلمات المحظورة هي الكلمات التي تعتبر كلمات مسيئة في وسائل التواصل الاجتماعي).',
+		icon: 'fa-solid fa-key',
+		function: 'tashfeerBannedWords',
+		inputPlaceholder: 'جيش العدو يقتل الأطفال',
+		outputPlaceholder: 'چـێـݭ !ڵعـݚۉ ی۪ـڨـټل الأطفال',
+	},
+	{
+		title: 'إزالة التشكيل',
+		description: 'إزالة التشكيل من النص العربي',
+		icon: 'fa-solid fa-folder',
+		function: 'removeTashkeel',
+		inputPlaceholder: 'الخَيْلُ وَاللّيْلُ وَالبَيْداءُ تَعرِفُني',
+		outputPlaceholder: 'الخيل والليل والبيداء تعرفني',
+	},
+	{
+		title: 'الكلمة إلى حروفها',
+		description: 'تحويل الكلمة العربية إلى حروفها المنطوقة.',
+		icon: 'fa-solid fa-folder',
+		function: 'wordToLetters',
+		inputPlaceholder: 'شجرة',
+		outputPlaceholder: 'شين جيم راء تاء_مربوطة',
+	},
+	{
+		title: 'إزالة اللواحق العربية',
+		description: 'إزالة اللواحق المحددة (البادئات واللاحقات) من كلمة عربية إذا بدأت أو انتهت بهذه اللواحق.',
+		icon: 'fa-solid fa-folder',
+		function: 'removeArabicAffixes',
+		inputPlaceholder: 'المدرسة',
+		outputPlaceholder: 'مدرس',
+	},
+	{
+		title: 'إزالة التطويل',
+		description: 'إزالة التطويل من النص العربي',
+		icon: 'fa-solid fa-folder',
+		function: 'removeTatweel',
+		inputPlaceholder: 'كن جميـــلا ترى الوجــود جميـــــلا',
+		outputPlaceholder: 'كن جميلا ترى الوجود جميلا',
+	},
 ];
+
+console.log('Arabic Services', ArabicServices);
 
 function initSlider() {
 	const sliderContainer = document.getElementById('sliderContainer');
