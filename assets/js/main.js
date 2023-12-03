@@ -38,7 +38,6 @@ function initSlider() {
 	sliderContainer.innerHTML = '';
 	let outputHTML = '';
 	for (const service of SERVICES) {
-		console.log(service.title, service.function);
 		const id = 'service-' + service.function;
 		outputHTML += `
 		<div id=${id} class="slide" onclick="selectService('${service.function}', '${id}')">
