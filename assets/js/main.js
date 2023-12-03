@@ -70,7 +70,6 @@ function initSlider() {
 		<div id=${id} class="slide" onclick="selectService('${service.function}', '${id}')">
 			<i class="${service.icon}"></i>
 			<h3>${service.title}</h3>
-			${service.subtitle ? `<span>(${service.subtitle})</span>` : ''}
 		</div>
 		`;
 	}
@@ -150,3 +149,20 @@ slider.addEventListener('mousemove', (e) => {
 		isDrag = true; // Set as drag if movement is beyond threshold
 	}
 });
+
+// --------------------- Copy Output -----------------------------
+function copyOutput() {
+	if (outputTextArea.value == '') {
+		return;
+	}
+	outputTextArea.select();
+	outputTextArea.setSelectionRange(0, 99999); /*For mobile devices*/
+	document.execCommand('copy');
+	Swal.fire({
+		position: 'center',
+		icon: 'success',
+		title: 'تم النسخ',
+		showConfirmButton: false,
+		timer: 1500,
+	});
+}

@@ -52,14 +52,18 @@
 			</p>
 
 			<div class="textarea-container">
-				<textarea id="inputTextArea" name="inputTextArea" placeholder="placeholder.." rows="7"></textarea>
+				<textarea id="inputTextArea" name="inputTextArea" placeholder="ادخل النص هنا.." rows="5"></textarea>
 				<div class="action_btn">
 					<button onclick="convert()">
 						تحويل
 						<i class="fas fa-redo"></i>
 					</button>
 				</div>
-				<textarea id="outputTextArea" name="outputTextArea" class="outputTextArea" rows="5" readonly></textarea>
+				<textarea id="outputTextArea" name="outputTextArea" class="outputTextArea" rows="4" readonly></textarea>
+				<button class="blue-btn" onclick="copyOutput()">
+					<i class="far fa-copy"></i>
+					نسخ
+				</button>
 			</div>
 		</main>
 
@@ -98,6 +102,8 @@
 			</div>
 		</footer>
 
+		<!-- SweetAlert2 for showing errors and success -->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ZS6R0YVEF"></script>
 		<script>
@@ -112,6 +118,7 @@
 		<script>
 			window.addEventListener('load', () => {
 				console.log('loaded');
+				// TODO: uncomment this
 				registerSW();
 			});
 
