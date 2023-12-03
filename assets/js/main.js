@@ -104,7 +104,7 @@ function selectService(functionName, id) {
 }
 
 function convert() {
-	outputTextArea.value = ArabicServices[selectedServiceFunction](inputTextArea.value);
+	outputTextArea.value = ArabicServices[selectedServiceFunction](inputTextArea.value.trim());
 }
 
 document.addEventListener('DOMContentLoaded', function () {
