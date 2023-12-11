@@ -188,6 +188,15 @@ textarea:focus {
 	background-color: #f5f5f5;
 }
 
+.output-actions {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	gap: 15px;
+}
+
 /* ========== Buttons ========== */
 button {
 	background-color: #4caf50;
@@ -223,6 +232,16 @@ button:hover {
 .action_btn {
 	direction: rtl;
 	padding: 10px;
+}
+
+.output-actions button {
+	background: transparent;
+	color: var(--light-blue);
+	border: 2px solid var(--light-blue);
+}
+.output-actions button:hover {
+	background-color: var(--light-blue);
+	color: #fff;
 }
 
 /* ========== Footer ========== */

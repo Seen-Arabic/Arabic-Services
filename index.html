@@ -75,14 +75,16 @@
 					</button>
 				</div>
 				<textarea id="outputTextArea" name="outputTextArea" class="outputTextArea" rows="4" readonly></textarea>
-				<button class="blue-btn" onclick="copyOutput()">
-					<i class="far fa-copy"></i>
-					نسخ
-				</button>
-				<button class="blue-btn" onclick="shareOutput()">
-					<i class="fas fa-share"></i>
-					مشاركة
-				</button>
+				<div class="output-actions">
+					<button onclick="copyOutput()">
+						<i class="far fa-copy"></i>
+						نسخ
+					</button>
+					<button onclick="shareOutput()">
+						<i class="fas fa-share"></i>
+						مشاركة
+					</button>
+				</div>
 			</div>
 		</main>
 
