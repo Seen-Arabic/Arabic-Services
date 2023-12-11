@@ -1,4 +1,4 @@
-const CACHE_NAME = 'services-v2.2.13';
+const CACHE_NAME = 'services-v2.2.15';
 const staticAssets = [
 	'./',
 	'./index.html',

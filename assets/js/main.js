@@ -84,6 +84,7 @@ let selectedServiceFunction = 'toOldArabic';
 let selectedSlideId = 'service-toOldArabic';
 
 function selectService(functionName, id) {
+	console.log('selectService', functionName, id);
 	if (isDrag) return; // Ignore if the action is a drag
 	// remove active slide
 	const oldSlide = document.getElementById(selectedSlideId);
@@ -100,6 +101,14 @@ function selectService(functionName, id) {
 	inputTextArea.placeholder = service.inputPlaceholder || '';
 	outputTextArea.placeholder = service.outputPlaceholder || '';
 	outputTextArea.value = '';
+
+	setTimeout(() => {
+		console.log('scrollIntoView', slide);
+		slide.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+	}, 100);
+
+	// save last selected service
+	localStorage.setItem('lastSelectedService', functionName);
 }
 
 function convert() {
@@ -108,7 +117,14 @@ function convert() {
 
 document.addEventListener('DOMContentLoaded', function () {
 	initSlider();
-	selectService('toOldArabic', 'service-toOldArabic');
+
+	// Read the last selected service from localStorage
+	const lastSelectedService = localStorage.getItem('lastSelectedService');
+
+	// If there's a saved service, use it, otherwise default to 'toOldArabic'
+	const defaultService = lastSelectedService || 'toOldArabic';
+	const defaultServiceId = 'service-' + defaultService;
+	selectService(defaultService, defaultServiceId);
 });
 
 /*
