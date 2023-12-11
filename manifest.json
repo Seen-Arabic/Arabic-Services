@@ -1,7 +1,7 @@
 {
 	"name": "خدمات اللغة العربية",
 	"short_name": "خدمات اللغة العربية",
-	"description": "موقع لخدمات ما يتعلق باللغة العربية والكتابة بدون نقط",
+	"description": "خدمات اللغة العربية لإزالة التشكيل والتطويل، وتحويل النصوص إلى الخط العربي القديم (الكتابة بدون نقاط)، وتشفير النصوص لأغراض الترميز والخصوصية.",
 	"start_url": "/?utm_medium=PWA&utm_source=launcher",
 	"id": "/?utm_medium=PWA&utm_source=launcher",
 	"background_color": "#33485d",
@@ -53,6 +53,50 @@
 			"type": "image/png",
 			"sizes": "512x512",
 			"purpose": "any"
+		}
+	],
+	"screenshots": [
+		{
+			"src": "assets/images/screenshots/old-arabic-script-mobile.png",
+			"label": "Old Arabic Script",
+			"type": "image/png",
+			"sizes": "1170x2532",
+			"form_factor": "narrow"
+		},
+		{
+			"src": "assets/images/screenshots/old-arabic-script-desktop.png",
+			"label": "Old Arabic Script",
+			"type": "image/png",
+			"sizes": "2020x1724",
+			"form_factor": "wide"
+		},
+		{
+			"src": "assets/images/screenshots/remove-tashkeel-mobile.png",
+			"label": "Remove Tashkeel",
+			"type": "image/png",
+			"sizes": "1170x2532",
+			"form_factor": "narrow"
+		},
+		{
+			"src": "assets/images/screenshots/remove-tashkeel-desktop.png",
+			"label": "Remove Tashkeel",
+			"type": "image/png",
+			"sizes": "2020x1724",
+			"form_factor": "wide"
+		},
+		{
+			"src": "assets/images/screenshots/tashfeer-panned-mobile.png",
+			"label": "Tashfeer",
+			"type": "image/png",
+			"sizes": "1170x2532",
+			"form_factor": "narrow"
+		},
+		{
+			"src": "assets/images/screenshots/tashfeer-panned-desktop.png",
+			"label": "Tashfeer",
+			"type": "image/png",
+			"sizes": "2020x1724",
+			"form_factor": "wide"
 		}
 	]
 }
