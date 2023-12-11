@@ -7,6 +7,7 @@
 	"background_color": "#33485d",
 	"theme_color": "#33485d",
 	"display": "standalone",
+	"orientation": "portrait",
 	"lang": "ar",
 	"categories": ["education", "utilities", "tools", "productivity", "books", "language"],
 	"scope": "/",
