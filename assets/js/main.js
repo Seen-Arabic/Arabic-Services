@@ -182,3 +182,47 @@ function copyOutput() {
 		timer: 1500,
 	});
 }
+
+// --------------------- Share -----------------------------
+function shareOutput() {
+	const textToShare = outputTextArea.value.trim();
+	if (textToShare == '') {
+		return;
+	}
+
+	// Check if the Web Share API is available
+	if (navigator.share) {
+		navigator
+			.share({
+				text: textToShare,
+			})
+			.then(() =>
+				Swal.fire({
+					position: 'center',
+					icon: 'success',
+					title: 'تم المشاركة',
+					showConfirmButton: false,
+					timer: 1500,
+				}),
+			)
+			.catch((error) => {
+				Swal.fire({
+					position: 'center',
+					icon: 'error',
+					title: 'حدث خطأ أثناء المشاركة',
+					showConfirmButton: false,
+					timer: 1500,
+				});
+				console.log('Error sharing:', error);
+			});
+	} else {
+		// Web Share API is not available, handle it as a fallback
+		Swal.fire({
+			position: 'center',
+			icon: 'error',
+			title: 'عذراً، لا يدعم متصفحك هذه الميزة',
+			showConfirmButton: false,
+			timer: 1500,
+		});
+	}
+}

@@ -79,6 +79,10 @@
 					<i class="far fa-copy"></i>
 					نسخ
 				</button>
+				<button class="blue-btn" onclick="shareOutput()">
+					<i class="fas fa-share"></i>
+					مشاركة
+				</button>
 			</div>
 		</main>
 
@@ -133,7 +137,7 @@
 		<script>
 			window.addEventListener('load', () => {
 				console.log('loaded');
-				// registerSW();
+				registerSW();
 			});
 
 			function registerSW() {
