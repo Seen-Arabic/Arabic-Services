@@ -206,13 +206,6 @@ function shareOutput() {
 				}),
 			)
 			.catch((error) => {
-				Swal.fire({
-					position: 'center',
-					icon: 'error',
-					title: 'حدث خطأ أثناء المشاركة',
-					showConfirmButton: false,
-					timer: 1500,
-				});
 				console.log('Error sharing:', error);
 			});
 	} else {
