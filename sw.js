@@ -1,4 +1,5 @@
-const CACHE_NAME = 'services-v2.2.17';
+const version = '2.0.0-' + new Date().getTime();
+const CACHE_NAME = `services-v${version}`;
 const staticAssets = [
 	'./',
 	'./index.html',
@@ -25,22 +26,30 @@ const staticAssets = [
 
 self.addEventListener('install', (event) => {
 	// Perform install steps
+	console.log('Installing new service worker...');
 	event.waitUntil(
-		caches.open(CACHE_NAME).then((cache) => {
-			console.log('Opened cache');
-			return cache.addAll(staticAssets);
-		}),
+		caches
+			.open(CACHE_NAME)
+			.then((cache) => {
+				console.log('Opened cache');
+				return cache.addAll(staticAssets);
+			})
+			.then(() => {
+				console.log('Skip waiting on install');
+				return self.skipWaiting(); // Add this line to activate the service worker immediately
+			}),
 	);
 });
 
 self.addEventListener('activate', (event) => {
-	const cacheWhitelist = [CACHE_NAME];
-
+	console.log('Activating new service worker...');
 	event.waitUntil(
 		caches.keys().then((cacheNames) => {
 			return Promise.all(
 				cacheNames.map((cacheName) => {
-					if (cacheWhitelist.indexOf(cacheName) === -1) {
+					console.log('cacheName', cacheName);
+					if (cacheName !== CACHE_NAME) {
+						console.log('Deleting old cache...', cacheName);
 						return caches.delete(cacheName);
 					}
 				}),
