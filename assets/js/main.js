@@ -219,3 +219,71 @@ function shareOutput() {
 		});
 	}
 }
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+	// Prevent the mini-infobar from appearing on mobile
+	e.preventDefault();
+	// Stash the event so it can be triggered later.
+	deferredPrompt = e;
+	console.log('beforeinstallprompt fired', deferredPrompt);
+	// Update UI to notify the user they can add to home screen
+	showInstallPromotion();
+});
+
+const downloadButton = document.getElementById('downloadButton');
+function showInstallPromotion() {
+	downloadButton.style.display = 'block';
+}
+
+function downloadHandlerForPWA() {
+	// Hide the app provided install promotion
+	downloadButton.style.display = 'none';
+	// Show the install prompt
+	deferredPrompt.prompt();
+	// Wait for the user to respond to the prompt
+	deferredPrompt.userChoice.then((choiceResult) => {
+		if (choiceResult.outcome === 'accepted') {
+			console.log('User accepted the install prompt');
+		} else {
+			console.log('User dismissed the install prompt');
+			showInstallPromotion();
+		}
+		deferredPrompt = null;
+		console.log('deferredPrompt', deferredPrompt);
+	});
+}
+
+window.addEventListener('appinstalled', () => {
+	// Hide the app-provided install promotion
+	hideInstallPromotion();
+	// Clear the deferredPrompt so it can be garbage collected
+	deferredPrompt = null;
+	// Optionally, send analytics event to indicate successful install
+	console.log('PWA was installed');
+});
+
+function hideInstallPromotion() {
+	const downloadButton = document.getElementById('downloadButton');
+	downloadButton.style.display = 'none';
+}
+
+function promptInstallPWA() {
+	Swal.fire({
+		title: 'تثبيت التطبيق',
+		text: 'هل تريد تثبيت التطبيق على جهازك؟',
+		icon: 'question',
+		iconColor: '#ff9800',
+		showCancelButton: true,
+		confirmButtonText: 'نعم',
+		cancelButtonText: 'لا',
+	}).then((result) => {
+		if (result.isConfirmed) {
+			downloadHandlerForPWA();
+		}
+	});
+}
+if (deferredPrompt !== null) {
+	promptInstallPWA();
+}
