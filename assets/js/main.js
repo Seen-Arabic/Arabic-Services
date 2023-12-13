@@ -284,6 +284,6 @@ function promptInstallPWA() {
 		}
 	});
 }
-if (deferredPrompt !== null) {
-	promptInstallPWA();
-}
+// if (deferredPrompt !== null) {
+// 	promptInstallPWA();
+// }
