@@ -1,4 +1,4 @@
-const version = '2.0.0-' + new Date().getTime();
+const version = '2.0.1-' + new Date().getTime();
 const CACHE_NAME = `services-v${version}`;
 const staticAssets = [
 	'./',
