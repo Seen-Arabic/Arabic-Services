@@ -59,13 +59,34 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-	event.respondWith(
-		caches.match(event.request).then((response) => {
-			// Cache hit - return response
-			if (response) {
-				return response;
-			}
-			return fetch(event.request);
-		}),
-	);
+	// Check if the request is a GET request and comes from our origin
+	if (event.request.method === 'GET' && new URL(event.request.url).origin === location.origin) {
+		event.respondWith(
+			fetch(event.request)
+				.then((res) => {
+					// Check if we received a valid response
+					if (!res || res.status !== 200 || res.type !== 'basic') {
+						return res;
+					}
+
+					// Make copy/clone of response
+					const resClone = res.clone();
+					// Open cache
+					caches.open(CACHE_NAME).then((cache) => {
+						// Add response to cache
+						cache.put(event.request, resClone);
+					});
+					return res;
+				})
+				.catch((err) => {
+					// Check if the response exists in the cache
+					return caches.match(event.request).then((response) => {
+						return response || Promise.reject(new Error('no-match'));
+					});
+				}),
+		);
+	} else {
+		// If the request is not from our origin or not a GET request, just fetch it without caching
+		event.respondWith(fetch(event.request));
+	}
 });
