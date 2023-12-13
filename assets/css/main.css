@@ -12,8 +12,7 @@ html {
 }
 
 :root {
-	/* --bg-color: #f5f7fe; */
-	--bg-color: #ff0000;
+	--bg-color: #f5f7fe;
 	--light-blue: #5296cf;
 	--primary: #33485d;
 	--dark: #1e2b3c;
