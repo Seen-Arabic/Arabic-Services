@@ -77,7 +77,7 @@ function initSlider() {
 			? `<img src="${service.thumbnailURL}" alt="${service.title}" />`
 			: `<i class="${service.icon}"></i>`;
 		outputHTML += `
-		<div id=${id} class="slide" onclick="selectService('', '${id}')">
+		<div id=${id} class="slide" onclick="selectService('${service.function}', '${id}')">
 			${thumbnailURL}
 			<h3>${service.title}</h3>
 		</div>
