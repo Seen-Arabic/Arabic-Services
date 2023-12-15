@@ -94,8 +94,13 @@ nav .nav-title {
 
 .slider-container h3 {
 	margin: 0;
-	margin-top: 10px;
 	font-size: 1em;
+}
+
+.slide img {
+	max-width: 100%;
+	border-bottom: 1px solid #ffffff38;
+	padding-bottom: 10px;
 }
 
 .slide {
@@ -118,6 +123,7 @@ nav .nav-title {
 }
 .slide i {
 	font-size: 2em;
+	padding-bottom: 10px;
 }
 
 .slide:hover {

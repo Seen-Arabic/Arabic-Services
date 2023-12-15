@@ -1,8 +1,9 @@
 const SERVICES = [
 	{
-		title: 'الرسم العربي القديم (بدون نقاط)',
+		title: 'الرسم العربي القديم',
 		description: 'تحويل النص العربي إلى الرسم العربي القديم أي قبل وضع النقاط على الحروف والهمزات.',
 		icon: 'fa-solid fa-folder',
+		thumbnailURL: 'assets/images/toOldArabic.svg',
 		function: 'toOldArabic',
 		inputPlaceholder: 'الخَيْلُ وَاللّيْلُ وَالبَيْداءُ تَعرِفُني',
 		outputPlaceholder: 'الحىل واللىل والٮىدا ٮعرڡٮى',
@@ -11,6 +12,7 @@ const SERVICES = [
 		title: 'التشفير',
 		description: 'استبدال النص العربي بأحرف مشابهة بصريًا لأغراض الترميز.',
 		icon: 'fa-solid fa-key',
+		thumbnailURL: 'assets/images/tashfeer.svg',
 		function: 'tashfeer',
 		inputPlaceholder: 'هذا النص مشفر',
 		outputPlaceholder: 'هـۮו اڵـݔص مـݭفـݛ',
@@ -20,6 +22,7 @@ const SERVICES = [
 		description:
 			'استبدال النصوص العربية المحظورة بأحرف مشابهة بصريًا لأغراض الترميز. (الكلمات المحظورة هي الكلمات التي تعتبر كلمات مسيئة في وسائل التواصل الاجتماعي).',
 		icon: 'fa-solid fa-key',
+		thumbnailURL: 'assets/images/tashfeerBannedWords.svg',
 		function: 'tashfeerBannedWords',
 		inputPlaceholder: 'جيش العدو يقتل الأطفال',
 		outputPlaceholder: 'چـێـݭ !ڵعـݚۉ ی۪ـڨـټل الأطفال',
@@ -28,6 +31,7 @@ const SERVICES = [
 		title: 'إزالة التشكيل',
 		description: 'إزالة التشكيل من النص العربي',
 		icon: 'fa-solid fa-folder',
+		thumbnailURL: 'assets/images/removeTashkeel.svg',
 		function: 'removeTashkeel',
 		inputPlaceholder: 'الخَيْلُ وَاللّيْلُ وَالبَيْداءُ تَعرِفُني',
 		outputPlaceholder: 'الخيل والليل والبيداء تعرفني',
@@ -36,6 +40,7 @@ const SERVICES = [
 		title: 'الكلمة إلى حروفها',
 		description: 'تحويل الكلمة العربية إلى حروفها المنطوقة.',
 		icon: 'fa-solid fa-folder',
+		thumbnailURL: 'assets/images/wordToLetters.svg',
 		function: 'wordToLetters',
 		inputPlaceholder: 'شجرة',
 		outputPlaceholder: 'شين جيم راء تاء_مربوطة',
@@ -44,6 +49,7 @@ const SERVICES = [
 		title: 'إزالة اللواحق العربية',
 		description: 'إزالة اللواحق المحددة (البادئات واللاحقات) من كلمة عربية إذا بدأت أو انتهت بهذه اللواحق.',
 		icon: 'fa-solid fa-folder',
+		thumbnailURL: 'assets/images/removeArabicAffixes.svg',
 		function: 'removeArabicAffixes',
 		inputPlaceholder: 'المدرسة',
 		outputPlaceholder: 'مدرس',
@@ -52,6 +58,7 @@ const SERVICES = [
 		title: 'إزالة التطويل',
 		description: 'إزالة التطويل من النص العربي',
 		icon: 'fa-solid fa-folder',
+		thumbnailURL: 'assets/images/removeTatweel.svg',
 		function: 'removeTatweel',
 		inputPlaceholder: 'كن جميـــلا ترى الوجــود جميـــــلا',
 		outputPlaceholder: 'كن جميلا ترى الوجود جميلا',
@@ -66,9 +73,12 @@ function initSlider() {
 	let outputHTML = '';
 	for (const service of SERVICES) {
 		const id = 'service-' + service.function;
+		const thumbnailURL = service.thumbnailURL
+			? `<img src="${service.thumbnailURL}" alt="${service.title}" />`
+			: `<i class="${service.icon}"></i>`;
 		outputHTML += `
-		<div id=${id} class="slide" onclick="selectService('${service.function}', '${id}')">
-			<i class="${service.icon}"></i>
+		<div id=${id} class="slide" onclick="selectService('', '${id}')">
+			${thumbnailURL}
 			<h3>${service.title}</h3>
 		</div>
 		`;
