@@ -60,18 +60,6 @@
 
 			<hr style="width: 100%" />
 
-			<!-- design this button with better icon and css -->
-			<button
-				id="downloadButton"
-				style="display: none"
-				onclick="downloadHandlerForPWA()"
-				class="download-button"
-				dir="auto"
-			>
-				تحميل التطبيق
-				<i class="fas fa-download"></i>
-			</button>
-
 			<!-- Title & description -->
 			<h1 dir="auto" id="serviceTitle">الرسم العرٮى الٯدىم</h1>
 			<p dir="auto" id="serviceDescription">
@@ -108,23 +96,36 @@
 				</a>
 			</div>
 			<div class="contact">
-				<div>
-					<h2>للتواصل والاقتراحات</h2>
-					<div class="social-links">
-						<a href="https://www.facebook.com/Seen.org/" target="_blank" rel="noreferrer" dir="ltr">
-							<i class="fab fa-facebook" style="font-size: 20px"></i>
-							/Seen.org
-						</a>
-
-						<a href="https://t.me/seen_arabic" target="_blank" rel="noreferrer" dir="ltr">
-							<i class="fab fa-telegram" style="font-size: 20px"></i>
-							@seen_arabic
-						</a>
-					</div>
+				<button
+					id="downloadButton"
+					style="display: none"
+					onclick="downloadHandlerForPWA()"
+					class="download-button"
+					dir="auto"
+				>
+					تحميل التطبيق
+					<i class="fas fa-download"></i>
+				</button>
+				<h2>للتواصل والاقتراحات</h2>
+				<div class="social-links">
+					<a href="https://www.facebook.com/Seen.org/" target="_blank" rel="noreferrer" dir="ltr">
+						<i class="fab fa-facebook"></i>
+					</a>
+					<a href="https://t.me/seen_arabic" target="_blank" rel="noreferrer" dir="ltr">
+						<i class="fab fa-telegram"></i>
+					</a>
+					<a href="https://github.com/Seen-Arabic" target="_blank" rel="noreferrer" dir="ltr">
+						<i class="fab fa-github"></i>
+					</a>
+					<a href="https://twitter.com/seen_arabic" target="_blank" rel="noreferrer" dir="ltr">
+						<i class="fab fa-twitter"></i>
+					</a>
+					<a href="https://www.linkedin.com/company/seen-arabic" target="_blank" rel="noreferrer" dir="ltr">
+						<i class="fab fa-linkedin"></i>
+					</a>
 					<a href="mailto:seendevelopment@gmail.com" dir="ltr" class="mail">
 						<i class="fas fa-envelope"></i>
-						SeenDevelopment@gmail.com</a
-					>
+					</a>
 				</div>
 				<div class="visitors">
 					<img

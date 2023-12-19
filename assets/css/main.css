@@ -253,7 +253,8 @@ button:hover {
 footer {
 	background-color: #33485d;
 	color: #fff;
-	padding: 10px;
+	padding: 20px;
+	padding-bottom: 10px;
 	text-align: center;
 	position: absolute;
 	bottom: 0;
@@ -278,24 +279,36 @@ footer p {
 
 footer .logo {
 	max-width: 100px;
-	max-height: auto;
 }
 
 footer h2 {
 	margin: 0px;
-	margin-bottom: 10px;
 	font-size: 1.1em;
 }
 
-footer div {
-	padding-top: 10px;
+footer .contact {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
 }
 
 footer .social-links {
 	padding: 0px;
 	display: flex;
-	flex-direction: column;
-	gap: 5px;
+	flex-direction: row;
+	gap: 20px;
+	justify-content: center;
+}
+
+footer .social-links a:hover {
+	transition: all ease 0.3s;
+	scale: 1.3;
+}
+
+footer .social-links i {
+	font-size: 20px;
 }
 
 @media screen and (max-width: 640px) {
@@ -305,6 +318,7 @@ footer .social-links {
 	footer {
 		flex-direction: column;
 		align-items: center;
+		gap: 20px;
 	}
 }
 

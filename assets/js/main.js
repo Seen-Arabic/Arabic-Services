@@ -65,8 +65,6 @@ const SERVICES = [
 	},
 ];
 
-console.log('Arabic Services', ArabicServices);
-
 function initSlider() {
 	const sliderContainer = document.getElementById('sliderContainer');
 	sliderContainer.innerHTML = '';
@@ -94,7 +92,6 @@ let selectedServiceFunction = 'toOldArabic';
 let selectedSlideId = 'service-toOldArabic';
 
 function selectService(functionName, id) {
-	console.log('selectService', functionName, id);
 	if (isDrag) return; // Ignore if the action is a drag
 	// remove active slide
 	const oldSlide = document.getElementById(selectedSlideId);
@@ -113,7 +110,6 @@ function selectService(functionName, id) {
 	outputTextArea.value = '';
 
 	setTimeout(() => {
-		console.log('scrollIntoView', slide);
 		slide.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
 	}, 100);
 
@@ -237,7 +233,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
 	e.preventDefault();
 	// Stash the event so it can be triggered later.
 	deferredPrompt = e;
-	console.log('beforeinstallprompt fired', deferredPrompt);
 	// Update UI to notify the user they can add to home screen
 	showInstallPromotion();
 });
@@ -261,7 +256,6 @@ function downloadHandlerForPWA() {
 			showInstallPromotion();
 		}
 		deferredPrompt = null;
-		console.log('deferredPrompt', deferredPrompt);
 	});
 }
 
@@ -291,6 +285,8 @@ function promptInstallPWA() {
 	}).then((result) => {
 		if (result.isConfirmed) {
 			downloadHandlerForPWA();
+		} else if (result.dismiss === Swal.DismissReason.cancel) {
+			console.log('User dismissed the prompt to install PWA');
 		}
 	});
 }
