@@ -1,8 +1,20 @@
 <h1 align=center>Arabic Services - خدمات اللغة العربية</h1>
 
+<div align=center>
+
+	
+[![All Contributors](https://img.shields.io/github/contributors/Seen-Arabic/Arabic-Services?color=green)](#contributors)
+[![GitHub
+Issues](https://img.shields.io/github/issues/Seen-Arabic/Arabic-Services)](https://github.com/Seen-Arabic/Arabic-Services/issues/)
+[![GitHub License](https://img.shields.io/github/license/Seen-Arabic/Arabic-Services)](./LICENSE)
+[![GitHub Repo stars](https://img.shields.io/github/stars/Seen-Arabic/Arabic-Services)](https://github.com/Seen-Arabic/Arabic-Services/stargazers)
+
+</div>
+
+
 <p align=center>بعض الخدمات البرمجية على نصوص اللغة العربية</p>
 <p align=center>
-   Arabic Services is a well tested and well documented library offering utility functions for processing and transforming Arabic text.
+   Arabic Services is a well tested and well documented library offering utility functions for processing and transforming Arabic text. 
 </p>
 
 ## 📦 Repositories - المستودعات
