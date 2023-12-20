@@ -79,7 +79,6 @@ nav .nav-title {
 .slider-container {
 	width: 100%;
 	display: flex;
-	justify-content: center;
 	user-select: none;
 	flex-wrap: nowrap;
 	overflow-y: auto;
