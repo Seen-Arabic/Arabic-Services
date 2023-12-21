@@ -1,3 +1,14 @@
 {
-  "liveServer.settings.port": 5585
+	"cSpell.words": ["ALEF", "DOTLESS", "Tashkeel", "Tatweel"],
+	"formattingToggle.affects": ["editor.formatOnSave"],
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "explicit"
+	},
+	"prettier.configPath": ".prettierrc",
+	"prettier.printWidth": 120,
+	"prettier.tabWidth": 4,
+	"prettier.singleQuote": true,
+	"prettier.trailingComma": "all"
 }

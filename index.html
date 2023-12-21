@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="ar">
 	<head>
-		<!-- to appear in google search engine -->
-		<meta name="google-site-verification" content="agxaHdiOj1PYxD0-8_XQ5XkttHtjKd4jXK7q1QkbP20" />
-
 		<meta charset="UTF-8" />
 		<meta name="author" content="seen - س" />
 		<title>خدمات اللغة العربية</title>
-		<meta name="description" content="موقع لخدمات ما يتعلق باللغة العربية والكتابة بدون نقط" />
+		<meta
+			name="keywords"
+			content="إزالة التشكيل, إزالة التطويل, الرسم العربي القديم, تشفير النصوص, تحويل الكلمات إلى حروف, اللغة العربية, Tashkeel Removal, Tatweel Removal, Old Arabic Script, Text Encryption, Word To Letters, Arabic Language"
+		/>
+		<meta
+			name="description"
+			content="خدمات اللغة العربية لإزالة التشكيل والتطويل، وتحويل النصوص إلى الخط العربي القديم (الكتابة بدون نقاط)، وتشفير النصوص لأغراض الترميز والخصوصية."
+		/>
+
+		<!-- To appear in google search engine, TODO: check this -->
+		<meta name="google-site-verification" content="agxaHdiOj1PYxD0-8_XQ5XkttHtjKd4jXK7q1QkbP20" />
 		<!-- PWA -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="manifest" href="manifest.json" />
@@ -15,52 +22,157 @@
 		<link rel="apple-touch-icon" href="assets/images/logo.svg" />
 		<!-- favicon -->
 		<link rel="icon" type="image/png" href="assets/images/logo-circle.svg" />
-		<!-- Open Graph Meta Tags -->
+		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="موقع لخدمات ما يتعلق باللغة العربية" />
 		<meta property="og:locale" content="ar_AR" />
 		<meta property="og:locale:alternate" content="ar_AR" />
 		<meta property="og:url" content="https://seen-arabic.github.io/Arabic-Services/" />
-		<meta property="og:title" content="الرسم العربي القديم" />
-		<meta property="og:description" content="موقع لخدمات ما يتعلق باللغة العربية" />
-		<meta property="og:image" content="https://seen-arabic.github.io/image/logo.png" />
+		<meta property="og:title" content="خدمات اللغة العربية" />
+		<meta property="og:description" content="موقع لخدمات ما يتعلق باللغة العربية والكتابة بدون نقاط" />
+		<meta property="og:image" content="https://seen-arabic.github.io/Arabic-Services/assets/images/og-image.png" />
 		<meta property="og:image:width" content="256" />
 		<meta property="og:image:height" content="256" />
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://seen-arabic.github.io/Arabic-Services/" />
+		<meta property="twitter:title" content="خدمات اللغة العربية" />
+		<meta property="twitter:description" content="موقع لخدمات ما يتعلق باللغة العربية والكتابة بدون نقاط" />
+		<meta property="og:image" content="https://seen-arabic.github.io/Arabic-Services/assets/images/og-image.png" />
+
 		<!-- Font Awesome -->
-		<link
-			rel="stylesheet"
-			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-			crossorigin="anonymous"
-		/>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" />
 		<!-- Main CSS -->
-		<link rel="stylesheet" href="assets/css/home.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 
 	<body>
-		<main>
-			<a href="https://www.facebook.com/Seen.org/" target="_blank" rel="noreferrer">
-				<img src="assets/images/logo-transparent.svg" alt="logo" class="logo" />
-				<p style="color: white; font-size: 17px" dir="auto">هدفنا نشر العلم والمعرفة بين مجتمعاتنا العربية.</p>
+		<!-- Navbar -->
+		<nav>
+			<h1 class="nav-title">خدمات اللغة العربية</h1>
+			<a href="https://seen-arabic.github.io/" class="logo-link" target="_blank" rel="noreferrer">
+				<img src="../assets/images/logo-transparent.svg" alt="logo" class="logo" />
 			</a>
-			<div class="content">
-				<a href="old-arabic/" class="white-box">
-					<i class="fas fa-feather-alt"></i>
-					<h2>تحويل الرسم العربي إلى الرسم القديم</h2>
-				</a>
-				<a href="letter-to-word/" class="white-box">
-					<i class="fas fa-keyboard"></i>
-					<h2>تحويل الحرف إلى كلمة</h2>
-				</a>
-			</div>
+		</nav>
 
-			<img
-				alt="visitors"
-				class="visitors"
-				src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Farabic-services.ml&count_bg=%2333485D&title_bg=%2333485D&icon=&icon_color=%23E7E7E7&title=visited+%5Btoday%2Fall+the+time%5D&edge_flat=false"
-			/>
+		<main>
+			<div class="slider-container" id="sliderContainer" dir="rtl"></div>
+
+			<hr style="width: 100%" />
+
+			<!-- Title & description -->
+			<h1 dir="auto" id="serviceTitle">الرسم العرٮى الٯدىم</h1>
+			<p dir="auto" id="serviceDescription">
+				موقع لتحويل نصوص اللغة العربية إلى طريقة الكتابة القديمة قبل وضع النقاط على الحروف
+			</p>
+
+			<div class="textarea-container">
+				<textarea id="inputTextArea" name="inputTextArea" placeholder="ادخل النص هنا.." rows="5"></textarea>
+				<div class="action_btn">
+					<button onclick="convert()">
+						تحويل
+						<i class="fas fa-redo"></i>
+					</button>
+				</div>
+				<textarea id="outputTextArea" name="outputTextArea" class="outputTextArea" rows="4" readonly></textarea>
+				<div class="output-actions">
+					<button onclick="copyOutput()">
+						<i class="far fa-copy"></i>
+						نسخ
+					</button>
+					<button onclick="shareOutput()">
+						<i class="fas fa-share"></i>
+						مشاركة
+					</button>
+				</div>
+			</div>
 		</main>
 
+		<footer dir="auto">
+			<div>
+				<a href="https://seen-arabic.github.io/" target="_blank" rel="noreferrer">
+					<img src="../assets/images/logo-transparent.svg" alt="logo" class="logo" />
+				</a>
+				<p>هدفنا نشر العلم والمعرفة بين مجتمعاتنا العربية.</p>
+				<a href="privacy-policy.html" target="_blank" rel="noreferrer" aria-label="Privacy policy link">
+					سياسة الخصوصية
+				</a>
+				|
+				<span href="about.html" onclick="showAboutUs()" style="cursor: pointer">من نحن </span>
+			</div>
+			<div class="contact">
+				<button
+					id="downloadButton"
+					style="display: none"
+					onclick="downloadHandlerForPWA()"
+					class="download-button"
+					dir="auto"
+				>
+					تحميل التطبيق
+					<i class="fas fa-download"></i>
+				</button>
+				<h2>للتواصل والاقتراحات</h2>
+				<div class="social-links">
+					<a
+						href="https://www.facebook.com/Seen.org/"
+						target="_blank"
+						rel="noreferrer"
+						dir="ltr"
+						aria-label="Facebook link"
+					>
+						<i class="fab fa-facebook"></i>
+					</a>
+					<a
+						href="https://t.me/seen_arabic"
+						target="_blank"
+						rel="noreferrer"
+						dir="ltr"
+						aria-label="Telegram link"
+					>
+						<i class="fab fa-telegram"></i>
+					</a>
+					<a
+						href="https://github.com/Seen-Arabic"
+						target="_blank"
+						rel="noreferrer"
+						dir="ltr"
+						aria-label="Github link"
+					>
+						<i class="fab fa-github"></i>
+					</a>
+					<a
+						href="https://twitter.com/seen_arabic"
+						target="_blank"
+						rel="noreferrer"
+						dir="ltr"
+						aria-label="Twitter link"
+					>
+						<i class="fab fa-twitter"></i>
+					</a>
+					<a
+						href="https://www.linkedin.com/company/seen-arabic"
+						target="_blank"
+						rel="noreferrer"
+						dir="ltr"
+						aria-label="Linkedin link"
+					>
+						<i class="fab fa-linkedin"></i>
+					</a>
+					<a href="mailto:seendevelopment@gmail.com" dir="ltr" class="mail" aria-label="Email link">
+						<i class="fas fa-envelope"></i>
+					</a>
+				</div>
+				<div class="visitors">
+					<img
+						alt="visitors"
+						src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Farabic-services.ml%2Fold-arabic%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visited+%5Btoday%2Fall+the+time%5D&edge_flat=false"
+					/>
+				</div>
+			</div>
+		</footer>
+
+		<!-- SweetAlert2 for showing errors and success -->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ZS6R0YVEF"></script>
 		<script>
@@ -91,5 +203,7 @@
 				}
 			}
 		</script>
+		<script src="assets/js/arabic-services.umd.js"></script>
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
