@@ -46,7 +46,7 @@ const SERVICES = [
 		outputPlaceholder: 'شين جيم راء تاء_مربوطة',
 	},
 	{
-		title: 'إزالة اللواحق العربية',
+		title: 'إزالة اللواحق العربية (قيد التطوير)',
 		description: 'إزالة اللواحق المحددة (البادئات واللاحقات) من كلمة عربية إذا بدأت أو انتهت بهذه اللواحق.',
 		icon: 'fa-solid fa-folder',
 		thumbnailURL: 'assets/images/removeArabicAffixes.svg',
