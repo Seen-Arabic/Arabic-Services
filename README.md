@@ -19,14 +19,15 @@ Issues](https://img.shields.io/github/issues/Seen-Arabic/Arabic-Services)](https
 
 ## 📦 Repositories - المستودعات
 
+- ### [arabic-services-api](https://arabic-services-api-v1.onrender.com/docs)
+	- Public and free API for accessing Arabic text processing services
 - ### [arabic-services-js](https://github.com/Seen-Arabic/Arabic-Services-JavaScript/) 
    - JavaScript (Node & Web browser) implementation
 - ### [arabic-services-java](https://github.com/Seen-Arabic/Arabic-Services-Java)
    - Java implementation with maven
 - ### [arabic-services-python](https://github.com/Seen-Arabic/arabic-services-python) [Coming Soon]
    - Python implementation
-- ### [arabic-services-api](https://github.com/Seen-Arabic/arabic-services-api) [Coming Soon]
-   - This repository powers the Arabic Services API on: [_URL will be published soon 🚀_]
+
 
 ## 💡 Discussion & Issues
 Issues and feature requests that pertain to all the different platforms (such as a new services for Arabic text) should be
