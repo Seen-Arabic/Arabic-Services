@@ -118,7 +118,25 @@ function selectService(functionName, id) {
 }
 
 function convert() {
-	outputTextArea.value = ArabicServices[selectedServiceFunction](inputTextArea.value.trim());
+	const inputText = inputTextArea.value.trim();
+	if (inputText === '') {
+		outputTextArea.value = '';
+		return;
+	}
+	const url = `https://arabic-services-api-v1.onrender.com/services?method=${selectedServiceFunction}`;
+	fetch(url, {
+		method: 'POST',
+		body: JSON.stringify({ input: inputText }),
+		headers: { 'Content-Type': 'application/json' },
+	})
+		.then((response) => response.text())
+		.then((data) => {
+			outputTextArea.value = data;
+		})
+		.catch((error) => {
+			console.error('Error:', error);
+			outputTextArea.value = ArabicServices[selectedServiceFunction](inputText);
+		});
 }
 
 document.addEventListener('DOMContentLoaded', function () {
