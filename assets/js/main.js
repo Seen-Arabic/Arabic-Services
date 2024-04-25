@@ -1,3 +1,65 @@
+class CustomEvents {
+	static triggerService(serviceName) {
+		gtag('event', 'use_service', {
+			event_category: 'Service Interactions',
+			event_label: serviceName,
+			value: 1,
+		});
+		console.log("[GA] Triggered 'use_service' event for service:", serviceName);
+	}
+
+	static convertServiceError(serviceName, errorMessage) {
+		gtag('event', 'service_error', {
+			event_category: 'Service Errors',
+			event_label: serviceName,
+			value: 1,
+			error_message: errorMessage,
+		});
+		console.log("[GA] Triggered 'service_error' event for service:", serviceName);
+	}
+
+	static selectServiceTriggered(serviceName) {
+		gtag('event', 'select_service', {
+			event_category: 'Service Interactions',
+			event_label: serviceName,
+			value: 1,
+		});
+		console.log("[GA] Triggered 'select_service' event for service:", serviceName);
+	}
+
+	static triggerCopyOutput() {
+		gtag('event', 'copy_output', {
+			event_category: 'Output Actions',
+			event_label: 'Copy Output',
+			value: 1,
+		});
+	}
+
+	static triggerShareOutput() {
+		gtag('event', 'share_output', {
+			event_category: 'Output Actions',
+			event_label: 'Share Output',
+			value: 1,
+		});
+	}
+
+	static triggerInstallPWA() {
+		gtag('event', 'install_pwa', {
+			event_category: 'PWA Actions',
+			event_label: 'Install PWA',
+			value: 1,
+		});
+	}
+
+	static triggerAboutUs() {
+		gtag('event', 'about_us', {
+			event_category: 'About Us',
+			event_label: 'About Us',
+			value: 1,
+		});
+	}
+}
+
 const SERVICES = [
 	{
 		title: 'الرسم العربي القديم',
@@ -115,6 +177,8 @@ function selectService(functionName, id) {
 
 	// save last selected service
 	localStorage.setItem('lastSelectedService', functionName);
+
+	CustomEvents.selectServiceTriggered(selectedServiceFunction);
 }
 
 function convert() {
@@ -123,20 +187,13 @@ function convert() {
 		outputTextArea.value = '';
 		return;
 	}
-	const url = `https://arabic-services-api-v1.onrender.com/services?method=${selectedServiceFunction}`;
-	fetch(url, {
-		method: 'POST',
-		body: JSON.stringify({ input: inputText }),
-		headers: { 'Content-Type': 'application/json' },
-	})
-		.then((response) => response.text())
-		.then((data) => {
-			outputTextArea.value = data;
-		})
-		.catch((error) => {
-			console.error('Error:', error);
-			outputTextArea.value = ArabicServices[selectedServiceFunction](inputText);
-		});
+	try {
+		outputTextArea.value = ArabicServices[selectedServiceFunction](inputText);
+		CustomEvents.triggerService(selectedServiceFunction);
+	} catch (error) {
+		console.error(error);
+		CustomEvents.convertServiceError(selectedServiceFunction, error.message);
+	}
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -175,6 +232,7 @@ slider.addEventListener('mouseleave', mouseleave);
 slider.addEventListener('mouseup', () => {
 	if (!isDrag) {
 		selectService(selectedServiceFunction, selectedSlideId);
+		console.log('when mouseup');
 	}
 	mouseleave();
 });
@@ -205,6 +263,8 @@ function copyOutput() {
 		showConfirmButton: false,
 		timer: 1500,
 	});
+
+	CustomEvents.triggerCopyOutput();
 }
 
 // --------------------- Share -----------------------------
@@ -213,6 +273,8 @@ function shareOutput() {
 	if (textToShare == '') {
 		return;
 	}
+
+	CustomEvents.triggerShareOutput();
 
 	// Check if the Web Share API is available
 	if (navigator.share) {
@@ -275,6 +337,8 @@ function downloadHandlerForPWA() {
 		}
 		deferredPrompt = null;
 	});
+
+	CustomEvents.triggerInstallPWA();
 }
 
 window.addEventListener('appinstalled', () => {
@@ -315,6 +379,8 @@ function promptInstallPWA() {
 // --------------------- About Us -----------------------------
 
 function showAboutUs() {
+	CustomEvents.triggerAboutUs();
+
 	Swal.fire({
 		title: 'من نحن',
 		width: '90%',
