@@ -5,7 +5,7 @@ class CustomEvents {
 			event_label: serviceName,
 			value: 1,
 		});
-		console.log("[GA] Triggered 'use_service' event for service:", serviceName);
+		console.debug("[GA] Triggered 'use_service' event for service:", serviceName);
 	}
 
 	static convertServiceError(serviceName, errorMessage) {
@@ -15,7 +15,7 @@ class CustomEvents {
 			value: 1,
 			error_message: errorMessage,
 		});
-		console.log("[GA] Triggered 'service_error' event for service:", serviceName);
+		console.debug("[GA] Triggered 'service_error' event for service:", serviceName);
 	}
 
 	static selectServiceTriggered(serviceName) {
@@ -24,7 +24,7 @@ class CustomEvents {
 			event_label: serviceName,
 			value: 1,
 		});
-		console.log("[GA] Triggered 'select_service' event for service:", serviceName);
+		console.debug("[GA] Triggered 'select_service' event for service:", serviceName);
 	}
 
 	static triggerCopyOutput() {
@@ -231,8 +231,7 @@ slider.addEventListener('mouseleave', mouseleave);
 
 slider.addEventListener('mouseup', () => {
 	if (!isDrag) {
-		selectService(selectedServiceFunction, selectedSlideId);
-		console.log('when mouseup');
+		// selectService(selectedServiceFunction, selectedSlideId);
 	}
 	mouseleave();
 });
