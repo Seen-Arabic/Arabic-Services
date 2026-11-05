@@ -172,7 +172,7 @@ main {
 
 textarea {
 	width: 100%;
-	resize: none;
+	resize: vertical;
 	padding: 12px 20px;
 	box-sizing: border-box;
 	border: 1px solid #ccc;
@@ -183,7 +183,7 @@ textarea {
 	font-size: 16px;
 	box-shadow: 1px 2px 3px #cccccc66;
 	direction: rtl;
-	flex: 1;
+	flex: 1 1 auto;
 }
 
 textarea:focus {
